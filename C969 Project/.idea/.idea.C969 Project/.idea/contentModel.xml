@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\michael mead\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\michael mead\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_C969 Project.-1528304234.00" t="ExcludeRecursive" />
+    <e p="C:\Users\michael mead\RiderProjects\C969-Project\C969 Project" t="IncludeRecursive">
+      <e p="AddAppoint.cs" t="Include" />
+      <e p="AddAppoint.Designer.cs" t="Include" />
+      <e p="AddAppoint.resx" t="Include" />
+      <e p="App.config" t="Include" />
+      <e p="Appointment.cs" t="Include" />
+      <e p="Appointment.Designer.cs" t="Include" />
+      <e p="Appointment.resx" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="C969 Project.csproj" t="IncludeRecursive" />
+      <e p="C969 Project.sln" t="IncludeFlat" />
+      <e p="CreateCustomer.cs" t="Include" />
+      <e p="CreateCustomer.Designer.cs" t="Include" />
+      <e p="CreateCustomer.resx" t="Include" />
+      <e p="Dashboard.cs" t="Include" />
+      <e p="Dashboard.Designer.cs" t="Include" />
+      <e p="Dashboard.resx" t="Include" />
+      <e p="DBHelper.cs" t="Include" />
+      <e p="DeleteAppoint.cs" t="Include" />
+      <e p="DeleteAppoint.Designer.cs" t="Include" />
+      <e p="DeleteAppoint.resx" t="Include" />
+      <e p="DeleteCustomer.cs" t="Include" />
+      <e p="DeleteCustomer.Designer.cs" t="Include" />
+      <e p="DeleteCustomer.resx" t="Include" />
+      <e p="Logger.cs" t="Include" />
+      <e p="Login.cs" t="Include" />
+      <e p="Login.Designer.cs" t="Include" />
+      <e p="Login.resx" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.cs" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="Schedule.cs" t="Include" />
+      <e p="Schedule.Designer.cs" t="Include" />
+      <e p="Schedule.resx" t="Include" />
+      <e p="Timecard.cs" t="Include" />
+      <e p="Timecard.Designer.cs" t="Include" />
+      <e p="Timecard.resx" t="Include" />
+      <e p="UpdateAppoint.cs" t="Include" />
+      <e p="UpdateAppoint.Designer.cs" t="Include" />
+      <e p="UpdateAppoint.resx" t="Include" />
+      <e p="UpdateCustomer.cs" t="Include" />
+      <e p="UpdateCustomer.Designer.cs" t="Include" />
+      <e p="UpdateCustomer.resx" t="Include" />
+      <e p="wguicon.ico" t="Include" />
+    </e>
+  </component>
+</project>
