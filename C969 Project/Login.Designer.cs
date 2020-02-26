@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.usernameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.userTextbox = new System.Windows.Forms.TextBox();
@@ -41,35 +42,35 @@
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(77, 64);
+            this.usernameLabel.Location = new System.Drawing.Point(90, 74);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(58, 13);
+            this.usernameLabel.Size = new System.Drawing.Size(63, 15);
             this.usernameLabel.TabIndex = 0;
             this.usernameLabel.Text = "Username:";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(77, 114);
+            this.passwordLabel.Location = new System.Drawing.Point(90, 132);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(56, 13);
+            this.passwordLabel.Size = new System.Drawing.Size(60, 15);
             this.passwordLabel.TabIndex = 1;
             this.passwordLabel.Text = "Password:";
             // 
             // userTextbox
             // 
             this.userTextbox.BackColor = System.Drawing.Color.White;
-            this.userTextbox.Location = new System.Drawing.Point(190, 64);
+            this.userTextbox.Location = new System.Drawing.Point(222, 74);
             this.userTextbox.Name = "userTextbox";
-            this.userTextbox.Size = new System.Drawing.Size(100, 20);
+            this.userTextbox.Size = new System.Drawing.Size(116, 23);
             this.userTextbox.TabIndex = 2;
             // 
             // passTextbox
             // 
-            this.passTextbox.Location = new System.Drawing.Point(190, 111);
+            this.passTextbox.Location = new System.Drawing.Point(222, 128);
             this.passTextbox.Name = "passTextbox";
             this.passTextbox.PasswordChar = '•';
-            this.passTextbox.Size = new System.Drawing.Size(100, 20);
+            this.passTextbox.Size = new System.Drawing.Size(116, 23);
             this.passTextbox.TabIndex = 3;
             // 
             // loginButton
@@ -77,9 +78,9 @@
             this.loginButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.loginButton.Location = new System.Drawing.Point(80, 175);
+            this.loginButton.Location = new System.Drawing.Point(93, 202);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(75, 23);
+            this.loginButton.Size = new System.Drawing.Size(87, 27);
             this.loginButton.TabIndex = 4;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -90,9 +91,9 @@
             this.cancelButton.BackColor = System.Drawing.Color.RoyalBlue;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButton.Location = new System.Drawing.Point(215, 175);
+            this.cancelButton.Location = new System.Drawing.Point(251, 202);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(87, 27);
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -101,19 +102,19 @@
             // infoLabel
             // 
             this.infoLabel.AutoSize = true;
-            this.infoLabel.Location = new System.Drawing.Point(111, 22);
+            this.infoLabel.Location = new System.Drawing.Point(129, 25);
             this.infoLabel.Name = "infoLabel";
-            this.infoLabel.Size = new System.Drawing.Size(151, 13);
+            this.infoLabel.Size = new System.Drawing.Size(169, 15);
             this.infoLabel.TabIndex = 6;
             this.infoLabel.Text = "Please Enter Login Information";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(391, 246);
+            this.ClientSize = new System.Drawing.Size(456, 284);
             this.Controls.Add(this.infoLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.loginButton);
@@ -121,13 +122,12 @@
             this.Controls.Add(this.userTextbox);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.usernameLabel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -36,7 +36,7 @@ namespace C969_Project
                 dataStrings.Add(s);
             }
             if (readText.Length == 0) {
-                dataStrings.Add("No timecard information to show.");
+                dataStrings.Add("No time card information to show.");
             }
             dataGridView.DataSource = dataStrings.Select(x => new { Value = x }).ToList();
             dataGridView.Show();
