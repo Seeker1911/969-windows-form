@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     public partial class CreateCustomer : Form
     {
@@ -30,13 +30,13 @@ namespace C969_Project
             if (pass)
             {
                 //Need to create country record
-                int countryID = DBHelper.createCountry(countryTextbox.Text);
+                int countryID = DBHelper.makeCountryRecord(countryTextbox.Text);
                 //Need to create city record
                 int cityID = DBHelper.createCity(countryID, cityTextbox.Text);
                 //Need to create address record
                 int addressID = DBHelper.createAddress(cityID, addressTextbox.Text, zipTextbox.Text, phoneTextbox.Text);
                 //Need to create customer record  -- customerID, name, adressID, active, create date, createdby, lastUpdate, updatedby
-                DBHelper.createCustomer(DBHelper.getID("customer", "customerId")+1, nameTextbox.Text, addressID, yesRadio.Checked ? 1 : 0, DBHelper.getDateTime(), DBHelper.getCurrentUserName());
+                DBHelper.createCustomerRecord(DBHelper.getMaxId("customer", "customerId")+1, nameTextbox.Text, addressID, yesRadio.Checked ? 1 : 0, DBHelper.getDateTime(), DBHelper.getCurrentUserName());
 
                 this.Owner.Show();
                 this.Close();

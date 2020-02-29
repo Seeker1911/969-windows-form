@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     class Logger
     {

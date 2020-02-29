@@ -1,6 +1,6 @@
-﻿namespace C969_Project
+﻿namespace Appointment_Tracker
 {
-    partial class AddAppoint
+    partial class AddAppointment
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(AddAppoint));
+                new System.ComponentModel.ComponentResourceManager(typeof(AddAppointment));
             this.custComboBox = new System.Windows.Forms.ComboBox();
             this.appointLabel = new System.Windows.Forms.Label();
             this.custLabel = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@
             this.createCusButton.TabIndex = 36;
             this.createCusButton.Text = "Create";
             this.createCusButton.UseVisualStyleBackColor = false;
-            this.createCusButton.Click += new System.EventHandler(this.CreateCusButton_Click);
+            this.createCusButton.Click += new System.EventHandler(this.CreateCustomerButton);
             // 
             // contactTextbox
             // 
@@ -226,7 +226,7 @@
             this.typeCombobox.Size = new System.Drawing.Size(223, 23);
             this.typeCombobox.TabIndex = 55;
             // 
-            // AddAppoint
+            // AddAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -251,7 +251,7 @@
             this.Controls.Add(this.appointLabel);
             this.Controls.Add(this.custComboBox);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-            this.Name = "AddAppoint";
+            this.Name = "AddAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Appointment";
             this.ResumeLayout(false);

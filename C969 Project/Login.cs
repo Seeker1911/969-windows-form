@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     public partial class Login : Form
     {

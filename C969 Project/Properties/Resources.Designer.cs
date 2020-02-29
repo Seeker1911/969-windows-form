@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace C969_Project.Properties
+namespace Appointment_Tracker.Properties
 {
 
 

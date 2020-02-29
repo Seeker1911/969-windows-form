@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     class DBHelper
     {
@@ -47,8 +43,7 @@ namespace C969_Project
 
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
-            //Week filter where end date and start date are less than a week away
-            //Month filter where end date and start date are less than a month away
+            //Week and month filters
             string query = week ? $"SELECT (select customerName from customer where customerId = appointment.customerId) as 'Customer',  start as 'Start Time', end as 'End Time', location as 'Location', title as 'Title' FROM appointment where start < '{filter}' and end < '{filter}' and createdBy = '{DBHelper.getCurrentUserId()}' and end > now() order by start;"
                 : $"SELECT  (select customerName from customer where customerId = appointment.customerId) as 'Customer', start as 'Start Time', end as 'End Time', location as 'Location', title as 'Title' FROM appointment where start < '{filter}' and end < '{filter}' and createdBy = '{DBHelper.getCurrentUserId()}' and end > now() order by start;";
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -102,18 +97,13 @@ namespace C969_Project
         }
 
 
-        //Creates customer record
-        public static void createCustomer(int id, string name, int addressId, int active, DateTime dateTime, string user)
+        public static void createCustomerRecord(int id, string name, int addressId, int active, DateTime dateTime, string user)
         {
-
             string sqlDate = dateSQLFormat(dateTime);
-
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
 
             MySqlTransaction transaction = conn.BeginTransaction();
-
-
             var query = "INSERT into customer (customerId, customerName, addressId,active, createDate, createdBy, lastUpdateBy) " +
                         $"VALUES ('{id}', '{name}',  '{addressId}', '{active}', '{dateSQLFormat(dateTime)}', '{user}', '{user}')";
 
@@ -124,8 +114,7 @@ namespace C969_Project
             conn.Close();
         }
 
-        //This grabs the max id from table and returns it
-        public static int getID(string table, string id)
+        public static int getMaxId(string table, string id)
         {
 
             MySqlConnection conn = new MySqlConnection(dataString);
@@ -139,28 +128,18 @@ namespace C969_Project
                 rdr.Read();
                 if (rdr[0] == DBNull.Value)
                 {
-
                     return 0;
                 }
-
-
                 return Convert.ToInt32(rdr[0]); ;
-
-
             }
-
             return 0;
         }
 
-        //Creates Country record
-        public static int createCountry(string country)
+        public static int makeCountryRecord(string country)
         {
-
-            int countryID = getID("country", "countryID") + 1;
+            int countryID = getMaxId("country", "countryID") + 1;
             string user = getCurrentUserName();
             DateTime utc = getDateTime();
-
-
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
 
@@ -168,19 +147,18 @@ namespace C969_Project
 
             var query = "INSERT into country (countryID, country, createDate, createdBy, lastUpdateBy) " +
                         $"VALUES ('{countryID}', '{country}', '{dateSQLFormat(utc)}','{user}', '{user}')";
+            
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Transaction = transaction;
             cmd.ExecuteNonQuery();
             transaction.Commit();
             conn.Close();
-
             return countryID;
         }
 
-        //Creates city record
         public static int createCity(int countryID, string city)
         {
-            int cityID = getID("city", "cityId") + 1;
+            int cityID = getMaxId("city", "cityId") + 1;
             string user = getCurrentUserName();
             DateTime utc = getDateTime();
 
@@ -201,14 +179,12 @@ namespace C969_Project
 
         }
 
-        //Creates address record
         public static int createAddress(int cityID, string address, string postalCode, string phone)
         {
 
-            int addressID = getID("address", "addressId") + 1;
+            int addressID = getMaxId("address", "addressId") + 1;
             string user = getCurrentUserName();
             DateTime utc = getDateTime();
-
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
 
@@ -216,6 +192,7 @@ namespace C969_Project
 
             var query = "INSERT into address (addressId, address, cityId, postalCode, phone, createDate, createdBy, lastUpdateBy) " +
                         $"VALUES ('{addressID}', '{address}', '{cityID}', '{postalCode}', '{phone}', '{dateSQLFormat(utc)}','{user}', '{user}')";
+            
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Transaction = transaction;
             cmd.ExecuteNonQuery();
@@ -225,7 +202,6 @@ namespace C969_Project
             return addressID;
         }
 
-        //Lookup customer info and return it as a list
         public static List<KeyValuePair<string, object>> searchCustomer(int customerID)
         {
             var list = new List<KeyValuePair<string, object>>();
@@ -456,7 +432,7 @@ namespace C969_Project
         //This creates an appointment
         public static void createAppointment(int custID, string title, string description, string location, string contact, string type, DateTime start, DateTime endTime)
         {
-            int appointID = getID("appointment", "appointmentId") + 1;
+            int appointID = getMaxId("appointment", "appointmentId") + 1;
             int userID = 1;
 
             DateTime utc = getDateTime();
@@ -582,18 +558,18 @@ namespace C969_Project
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
             var query = $"select distinct" +
-                $"              (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 1) as 'Jan'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 2) as 'Feb'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 3) as 'Mar'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 4) as 'Apr'," +
+                $"              (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 1) as 'January'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 2) as 'February'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 3) as 'March'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 4) as 'April'," +
                 $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 5) as 'May'," +
-                $"            (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 6) as 'Jun'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 7) as 'Jul'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 8) as 'Aug'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 9) as 'Sep'," +
-                $"            (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 10) as 'Oct'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 11) as 'Nov'," +
-                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 12) as 'Dec'" +
+                $"            (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 6) as 'June'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 7) as 'July'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 8) as 'August'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 9) as 'September'," +
+                $"            (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 10) as 'October'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 11) as 'November'," +
+                $"                (select count(type) from appointment where type = '{item}' and MONTH(appointment.start) = 12) as 'December'" +
                 $"            from appointment;";
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -601,18 +577,18 @@ namespace C969_Project
             if (rdr.HasRows)
             {
                 rdr.Read();
-                reportINFO.Add("Jan", rdr[0]);
-                reportINFO.Add("Feb", rdr[1]);
-                reportINFO.Add("Mar", rdr[2]);
-                reportINFO.Add("Apr", rdr[3]);
+                reportINFO.Add("January", rdr[0]);
+                reportINFO.Add("February", rdr[1]);
+                reportINFO.Add("March", rdr[2]);
+                reportINFO.Add("April", rdr[3]);
                 reportINFO.Add("May", rdr[4]);
-                reportINFO.Add("Jun", rdr[5]);
-                reportINFO.Add("Jul", rdr[6]);
-                reportINFO.Add("Aug", rdr[7]);
-                reportINFO.Add("Sep", rdr[8]);
-                reportINFO.Add("Oct", rdr[9]);
-                reportINFO.Add("Nov", rdr[10]);
-                reportINFO.Add("Dec", rdr[11]);
+                reportINFO.Add("June", rdr[5]);
+                reportINFO.Add("July", rdr[6]);
+                reportINFO.Add("August", rdr[7]);
+                reportINFO.Add("September", rdr[8]);
+                reportINFO.Add("October", rdr[9]);
+                reportINFO.Add("November", rdr[10]);
+                reportINFO.Add("December", rdr[11]);
             }
 
             return reportINFO;
