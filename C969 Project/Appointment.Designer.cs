@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(Appointment));
             this.backButton = new System.Windows.Forms.Button();
             this.reportButton = new System.Windows.Forms.Button();
             this.scheduleLabel = new System.Windows.Forms.Label();
@@ -66,9 +67,9 @@
             this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.backButton.Location = new System.Drawing.Point(377, 113);
+            this.backButton.Location = new System.Drawing.Point(440, 130);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(96, 31);
+            this.backButton.Size = new System.Drawing.Size(112, 36);
             this.backButton.TabIndex = 18;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = false;
@@ -80,9 +81,9 @@
             this.reportButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.reportButton.Location = new System.Drawing.Point(258, 113);
+            this.reportButton.Location = new System.Drawing.Point(301, 130);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Size = new System.Drawing.Size(96, 31);
+            this.reportButton.Size = new System.Drawing.Size(112, 36);
             this.reportButton.TabIndex = 17;
             this.reportButton.Text = "Generate Report";
             this.reportButton.UseVisualStyleBackColor = false;
@@ -91,9 +92,10 @@
             // scheduleLabel
             // 
             this.scheduleLabel.AutoSize = true;
-            this.scheduleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scheduleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
+                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.scheduleLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.scheduleLabel.Location = new System.Drawing.Point(197, 9);
+            this.scheduleLabel.Location = new System.Drawing.Point(230, 10);
             this.scheduleLabel.Name = "scheduleLabel";
             this.scheduleLabel.Size = new System.Drawing.Size(367, 29);
             this.scheduleLabel.TabIndex = 16;
@@ -104,7 +106,7 @@
             this.julLabel.AutoSize = true;
             this.julLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.julLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.julLabel.Location = new System.Drawing.Point(352, 203);
+            this.julLabel.Location = new System.Drawing.Point(411, 234);
             this.julLabel.Name = "julLabel";
             this.julLabel.Size = new System.Drawing.Size(45, 20);
             this.julLabel.TabIndex = 33;
@@ -115,7 +117,7 @@
             this.junLabel.AutoSize = true;
             this.junLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.junLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.junLabel.Location = new System.Drawing.Point(174, 362);
+            this.junLabel.Location = new System.Drawing.Point(203, 418);
             this.junLabel.Name = "junLabel";
             this.junLabel.Size = new System.Drawing.Size(53, 20);
             this.junLabel.TabIndex = 32;
@@ -126,7 +128,7 @@
             this.mayLabel.AutoSize = true;
             this.mayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.mayLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.mayLabel.Location = new System.Drawing.Point(174, 331);
+            this.mayLabel.Location = new System.Drawing.Point(203, 382);
             this.mayLabel.Name = "mayLabel";
             this.mayLabel.Size = new System.Drawing.Size(41, 20);
             this.mayLabel.TabIndex = 31;
@@ -137,7 +139,7 @@
             this.aprLabel.AutoSize = true;
             this.aprLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.aprLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.aprLabel.Location = new System.Drawing.Point(174, 300);
+            this.aprLabel.Location = new System.Drawing.Point(203, 346);
             this.aprLabel.Name = "aprLabel";
             this.aprLabel.Size = new System.Drawing.Size(50, 20);
             this.aprLabel.TabIndex = 30;
@@ -148,7 +150,7 @@
             this.marLabel.AutoSize = true;
             this.marLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.marLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.marLabel.Location = new System.Drawing.Point(174, 267);
+            this.marLabel.Location = new System.Drawing.Point(203, 308);
             this.marLabel.Name = "marLabel";
             this.marLabel.Size = new System.Drawing.Size(63, 20);
             this.marLabel.TabIndex = 29;
@@ -159,7 +161,7 @@
             this.febLabel.AutoSize = true;
             this.febLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.febLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.febLabel.Location = new System.Drawing.Point(174, 236);
+            this.febLabel.Location = new System.Drawing.Point(203, 272);
             this.febLabel.Name = "febLabel";
             this.febLabel.Size = new System.Drawing.Size(85, 20);
             this.febLabel.TabIndex = 28;
@@ -170,7 +172,7 @@
             this.janLabel.AutoSize = true;
             this.janLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.janLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.janLabel.Location = new System.Drawing.Point(174, 203);
+            this.janLabel.Location = new System.Drawing.Point(203, 234);
             this.janLabel.Name = "janLabel";
             this.janLabel.Size = new System.Drawing.Size(77, 20);
             this.janLabel.TabIndex = 27;
@@ -181,7 +183,7 @@
             this.decLabel.AutoSize = true;
             this.decLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.decLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.decLabel.Location = new System.Drawing.Point(352, 362);
+            this.decLabel.Location = new System.Drawing.Point(411, 418);
             this.decLabel.Name = "decLabel";
             this.decLabel.Size = new System.Drawing.Size(96, 20);
             this.decLabel.TabIndex = 38;
@@ -192,7 +194,7 @@
             this.novLabel.AutoSize = true;
             this.novLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.novLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.novLabel.Location = new System.Drawing.Point(352, 331);
+            this.novLabel.Location = new System.Drawing.Point(411, 382);
             this.novLabel.Name = "novLabel";
             this.novLabel.Size = new System.Drawing.Size(94, 20);
             this.novLabel.TabIndex = 37;
@@ -203,7 +205,7 @@
             this.octLabel.AutoSize = true;
             this.octLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.octLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.octLabel.Location = new System.Drawing.Point(352, 298);
+            this.octLabel.Location = new System.Drawing.Point(411, 344);
             this.octLabel.Name = "octLabel";
             this.octLabel.Size = new System.Drawing.Size(78, 20);
             this.octLabel.TabIndex = 36;
@@ -214,7 +216,7 @@
             this.septLabel.AutoSize = true;
             this.septLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.septLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.septLabel.Location = new System.Drawing.Point(352, 267);
+            this.septLabel.Location = new System.Drawing.Point(411, 308);
             this.septLabel.Name = "septLabel";
             this.septLabel.Size = new System.Drawing.Size(102, 20);
             this.septLabel.TabIndex = 35;
@@ -225,7 +227,7 @@
             this.augLabel.AutoSize = true;
             this.augLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.augLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.augLabel.Location = new System.Drawing.Point(352, 234);
+            this.augLabel.Location = new System.Drawing.Point(411, 270);
             this.augLabel.Name = "augLabel";
             this.augLabel.Size = new System.Drawing.Size(71, 20);
             this.augLabel.TabIndex = 34;
@@ -236,7 +238,7 @@
             this.junResult.AutoSize = true;
             this.junResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.junResult.ForeColor = System.Drawing.Color.Black;
-            this.junResult.Location = new System.Drawing.Point(260, 362);
+            this.junResult.Location = new System.Drawing.Point(303, 418);
             this.junResult.Name = "junResult";
             this.junResult.Size = new System.Drawing.Size(19, 20);
             this.junResult.TabIndex = 44;
@@ -247,7 +249,7 @@
             this.mayResult.AutoSize = true;
             this.mayResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.mayResult.ForeColor = System.Drawing.Color.Black;
-            this.mayResult.Location = new System.Drawing.Point(260, 331);
+            this.mayResult.Location = new System.Drawing.Point(303, 382);
             this.mayResult.Name = "mayResult";
             this.mayResult.Size = new System.Drawing.Size(19, 20);
             this.mayResult.TabIndex = 43;
@@ -258,7 +260,7 @@
             this.aprResult.AutoSize = true;
             this.aprResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.aprResult.ForeColor = System.Drawing.Color.Black;
-            this.aprResult.Location = new System.Drawing.Point(260, 300);
+            this.aprResult.Location = new System.Drawing.Point(303, 346);
             this.aprResult.Name = "aprResult";
             this.aprResult.Size = new System.Drawing.Size(19, 20);
             this.aprResult.TabIndex = 42;
@@ -269,7 +271,7 @@
             this.marResult.AutoSize = true;
             this.marResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.marResult.ForeColor = System.Drawing.Color.Black;
-            this.marResult.Location = new System.Drawing.Point(260, 267);
+            this.marResult.Location = new System.Drawing.Point(303, 308);
             this.marResult.Name = "marResult";
             this.marResult.Size = new System.Drawing.Size(19, 20);
             this.marResult.TabIndex = 41;
@@ -280,7 +282,7 @@
             this.febResult.AutoSize = true;
             this.febResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.febResult.ForeColor = System.Drawing.Color.Black;
-            this.febResult.Location = new System.Drawing.Point(260, 236);
+            this.febResult.Location = new System.Drawing.Point(303, 272);
             this.febResult.Name = "febResult";
             this.febResult.Size = new System.Drawing.Size(19, 20);
             this.febResult.TabIndex = 40;
@@ -291,7 +293,7 @@
             this.janResult.AutoSize = true;
             this.janResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.janResult.ForeColor = System.Drawing.Color.Black;
-            this.janResult.Location = new System.Drawing.Point(260, 203);
+            this.janResult.Location = new System.Drawing.Point(303, 234);
             this.janResult.Name = "janResult";
             this.janResult.Size = new System.Drawing.Size(19, 20);
             this.janResult.TabIndex = 39;
@@ -302,7 +304,7 @@
             this.decResult.AutoSize = true;
             this.decResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.decResult.ForeColor = System.Drawing.Color.Black;
-            this.decResult.Location = new System.Drawing.Point(478, 362);
+            this.decResult.Location = new System.Drawing.Point(558, 418);
             this.decResult.Name = "decResult";
             this.decResult.Size = new System.Drawing.Size(19, 20);
             this.decResult.TabIndex = 50;
@@ -313,7 +315,7 @@
             this.novResult.AutoSize = true;
             this.novResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.novResult.ForeColor = System.Drawing.Color.Black;
-            this.novResult.Location = new System.Drawing.Point(478, 331);
+            this.novResult.Location = new System.Drawing.Point(558, 382);
             this.novResult.Name = "novResult";
             this.novResult.Size = new System.Drawing.Size(19, 20);
             this.novResult.TabIndex = 49;
@@ -324,7 +326,7 @@
             this.octResult.AutoSize = true;
             this.octResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.octResult.ForeColor = System.Drawing.Color.Black;
-            this.octResult.Location = new System.Drawing.Point(478, 300);
+            this.octResult.Location = new System.Drawing.Point(558, 346);
             this.octResult.Name = "octResult";
             this.octResult.Size = new System.Drawing.Size(19, 20);
             this.octResult.TabIndex = 48;
@@ -335,7 +337,7 @@
             this.septResult.AutoSize = true;
             this.septResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.septResult.ForeColor = System.Drawing.Color.Black;
-            this.septResult.Location = new System.Drawing.Point(478, 267);
+            this.septResult.Location = new System.Drawing.Point(558, 308);
             this.septResult.Name = "septResult";
             this.septResult.Size = new System.Drawing.Size(19, 20);
             this.septResult.TabIndex = 47;
@@ -346,7 +348,7 @@
             this.augResult.AutoSize = true;
             this.augResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.augResult.ForeColor = System.Drawing.Color.Black;
-            this.augResult.Location = new System.Drawing.Point(478, 236);
+            this.augResult.Location = new System.Drawing.Point(558, 272);
             this.augResult.Name = "augResult";
             this.augResult.Size = new System.Drawing.Size(19, 20);
             this.augResult.TabIndex = 46;
@@ -357,7 +359,7 @@
             this.julResult.AutoSize = true;
             this.julResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.julResult.ForeColor = System.Drawing.Color.Black;
-            this.julResult.Location = new System.Drawing.Point(478, 203);
+            this.julResult.Location = new System.Drawing.Point(558, 234);
             this.julResult.Name = "julResult";
             this.julResult.Size = new System.Drawing.Size(19, 20);
             this.julResult.TabIndex = 45;
@@ -366,33 +368,27 @@
             // typeComboBox
             // 
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Items.AddRange(new object[] {
-            "Event",
-            "Follow Up",
-            "Initial Consulatation",
-            "Lab Visit",
-            "Other",
-            "Physical",
-            "Surgery"});
-            this.typeComboBox.Location = new System.Drawing.Point(313, 69);
+            this.typeComboBox.Items.AddRange(new object[]
+                {"Event", "Follow Up", "Initial Consulatation", "Lab Visit", "Other", "Physical", "Surgery"});
+            this.typeComboBox.Location = new System.Drawing.Point(365, 80);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(171, 21);
+            this.typeComboBox.Size = new System.Drawing.Size(199, 23);
             this.typeComboBox.TabIndex = 52;
             // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(239, 72);
+            this.typeLabel.Location = new System.Drawing.Point(279, 83);
             this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(34, 13);
+            this.typeLabel.Size = new System.Drawing.Size(34, 15);
             this.typeLabel.TabIndex = 51;
             this.typeLabel.Text = "Type:";
             // 
             // Appointment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 633);
+            this.ClientSize = new System.Drawing.Size(933, 730);
             this.Controls.Add(this.typeComboBox);
             this.Controls.Add(this.typeLabel);
             this.Controls.Add(this.decResult);
@@ -422,13 +418,12 @@
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.reportButton);
             this.Controls.Add(this.scheduleLabel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Appointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Appointment";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

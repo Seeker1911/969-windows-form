@@ -294,13 +294,13 @@ namespace Appointment_Tracker
                     rdr.Read();
                     list.Add(new KeyValuePair<string, object>("appointmentId", rdr[0]));
                     list.Add(new KeyValuePair<string, object>("customerId", rdr[1]));
-                    list.Add(new KeyValuePair<string, object>("title", rdr[2]));
-                    list.Add(new KeyValuePair<string, object>("description", rdr[3]));
-                    list.Add(new KeyValuePair<string, object>("location", rdr[4]));
-                    list.Add(new KeyValuePair<string, object>("contact", rdr[5]));
-                    list.Add(new KeyValuePair<string, object>("type", rdr[6]));
-                    list.Add(new KeyValuePair<string, object>("start", rdr[7]));
-                    list.Add(new KeyValuePair<string, object>("end", rdr[8]));
+                    list.Add(new KeyValuePair<string, object>("title", rdr[3]));
+                    list.Add(new KeyValuePair<string, object>("description", rdr[4]));
+                    list.Add(new KeyValuePair<string, object>("location", rdr[5]));
+                    list.Add(new KeyValuePair<string, object>("contact", rdr[6]));
+                    list.Add(new KeyValuePair<string, object>("type", rdr[7]));
+                    list.Add(new KeyValuePair<string, object>("start", rdr[9]));
+                    list.Add(new KeyValuePair<string, object>("end", rdr[10]));
                     rdr.Close();
                 }
                 else

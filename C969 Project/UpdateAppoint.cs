@@ -190,7 +190,7 @@ namespace Appointment_Tracker
 
             private void fillFields(List<KeyValuePair<string, object>> AppointList)
             {
-                // Lambda used to set text values from kvp
+                // Lambda used to set text values
                 titleTextbox.Text = AppointList.First(kvp => kvp.Key == "title").Value.ToString();
                 descriptionTextbox.Text = AppointList.First(kvp => kvp.Key == "description").Value.ToString();
                 locationTextbox.Text = AppointList.First(kvp => kvp.Key == "location").Value.ToString();
