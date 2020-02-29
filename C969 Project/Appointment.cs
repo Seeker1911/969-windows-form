@@ -24,7 +24,7 @@ namespace Appointment_Tracker
             try
             {
                 string item = typeComboBox.SelectedItem.ToString();
-                IDictionary<string, object> dictionary = DBHelper.reportAppoint(item);
+                IDictionary<string, object> dictionary = DBHelper.appointmentReport(item);
                 janResult.Text = dictionary["January"].ToString();
                 febResult.Text = dictionary["February"].ToString();
                 marResult.Text = dictionary["March"].ToString();

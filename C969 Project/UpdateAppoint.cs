@@ -40,7 +40,7 @@ namespace Appointment_Tracker
             DataRowView drv = appointComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(appointComboBox.SelectedValue);
 
-            var appointList = DBHelper.searchAppointment(id);
+            var appointList = DBHelper.lookupAppointment(id);
             setAppointList(appointList);
 
 

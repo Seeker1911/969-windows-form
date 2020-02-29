@@ -64,7 +64,7 @@ namespace Appointment_Tracker
             {
 
                 //Grab time of next appointment start
-                var list = DBHelper.getNextAppointInfo();
+                var list = DBHelper.getNextAppointment();
                 IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
                 //Time of login
                 DateTime? timeIn = getTime();

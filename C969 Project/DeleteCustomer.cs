@@ -132,7 +132,7 @@ namespace Appointment_Tracker
                     var list = getCustList();
                     IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
                     //First we need to check if appointments exist
-                    bool appoint = DBHelper.appointExist(dictionary["customerId"].ToString());
+                    bool appoint = DBHelper.checkAppointment(dictionary["customerId"].ToString());
                     if (appoint == false)
                     {
                         DBHelper.deleteCustomer(dictionary);
@@ -143,7 +143,7 @@ namespace Appointment_Tracker
                         DialogResult youSure2 = MessageBox.Show("Deleting this customer will remove all of there associated appointments, contiune?", "", MessageBoxButtons.YesNo);
                         if (youSure2 == DialogResult.Yes)
                         {
-                            DBHelper.noCustAppointments(dictionary["customerId"].ToString());
+                            DBHelper.deleteAppointment(dictionary["customerId"].ToString());
                             DBHelper.deleteCustomer(dictionary);
                         }
                         else {

@@ -13,7 +13,6 @@ namespace Appointment_Tracker
         private static string userName;
         public static string dataString = "server=3.227.166.251;database=U05DWb;uid=U05DWb;pwd=53688470925; convert zero datetime=True";
 
-
         public static string getDataString()
         {
             return dataString;
@@ -95,7 +94,6 @@ namespace Appointment_Tracker
 
             return formatForMySql;
         }
-
 
         public static void createCustomerRecord(int id, string name, int addressId, int active, DateTime dateTime, string user)
         {
@@ -205,7 +203,6 @@ namespace Appointment_Tracker
         public static List<KeyValuePair<string, object>> searchCustomer(int customerID)
         {
             var list = new List<KeyValuePair<string, object>>();
-            //Get customer Table info
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
             var query = $"SELECT * FROM customer WHERE customerId = {customerID}";
@@ -229,7 +226,6 @@ namespace Appointment_Tracker
                     return null;
                 }
 
-                //Get Address info now that we have addressID
                 var addressID = list.First(kvp => kvp.Key == "addressId").Value;
 
                 var query2 = $"SELECT * FROM address WHERE addressId = {addressID}";
@@ -246,7 +242,6 @@ namespace Appointment_Tracker
                     rdr2.Close();
                 }
 
-                //Get city info now that we have cityID
                 var cityID = list.First(kvp => kvp.Key == "cityId").Value;
 
                 var query3 = $"SELECT * FROM city WHERE cityId = {cityID}";
@@ -261,7 +256,6 @@ namespace Appointment_Tracker
                     rdr3.Close();
                 }
 
-                //Get country info now that we have countryId
                 var countryID = list.First(kvp => kvp.Key == "countryId").Value;
 
                 var query4 = $"SELECT * FROM country WHERE countryId = {countryID}";
@@ -284,11 +278,9 @@ namespace Appointment_Tracker
             }
         }
 
-        //Lookup appoint info and return it as a list
-        public static List<KeyValuePair<string, object>> searchAppointment(int appointmentID)
+        public static List<KeyValuePair<string, object>> lookupAppointment(int appointmentID)
         {
             var list = new List<KeyValuePair<string, object>>();
-            //Get customer Table info
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
             var query = $"SELECT * FROM appointment WHERE appointmentId = {appointmentID}";
@@ -326,7 +318,6 @@ namespace Appointment_Tracker
             }
         }
 
-        //Updates customer
         public static void updateCustomer(IDictionary<string, object> dictionary)
         {
             string user = getCurrentUserName();
@@ -378,7 +369,6 @@ namespace Appointment_Tracker
             conn.Close();
         }
 
-        //Deletes customer 
         public static void deleteCustomer(IDictionary<string, object> dictionary)
         {
             MySqlConnection conn = new MySqlConnection(dataString);
@@ -429,7 +419,6 @@ namespace Appointment_Tracker
 
         }
 
-        //This creates an appointment
         public static void createAppointment(int custID, string title, string description, string location, string contact, string type, DateTime start, DateTime endTime)
         {
             int appointID = getMaxId("appointment", "appointmentId") + 1;
@@ -450,7 +439,6 @@ namespace Appointment_Tracker
             conn.Close();
 
         }
-        //Updates appointment
         public static void updateAppointment(IDictionary<string, object> dictionary)
         {
             string user = getCurrentUserName();
@@ -472,7 +460,6 @@ namespace Appointment_Tracker
             conn.Close();
         }
 
-        //Deletes appointment
         public static void deleteAppointment(IDictionary<string, object> dictionary)
         {
             MySqlConnection conn = new MySqlConnection(dataString);
@@ -489,8 +476,7 @@ namespace Appointment_Tracker
             conn.Close();
         }
 
-        //Returns dictionary of next appointment
-        public static Dictionary<string, object> getNextAppointInfo()
+        public static Dictionary<string, object> getNextAppointment()
         {
             Dictionary<string, object> appointINFO = new Dictionary<string, object>();
 
@@ -527,7 +513,6 @@ namespace Appointment_Tracker
             return 0;
         }
 
-        //Returns datatable for schedule
         public static DataTable schedule(string id)
         {
 
@@ -550,8 +535,7 @@ namespace Appointment_Tracker
             conn.Close();
             return dt;
         }
-        //Returns dictionary for report on appointments
-        public static Dictionary<string, object> reportAppoint(string item)
+        public static Dictionary<string, object> appointmentReport(string item)
         {
             Dictionary<string, object> reportINFO = new Dictionary<string, object>();
 
@@ -593,8 +577,7 @@ namespace Appointment_Tracker
 
             return reportINFO;
         }
-        //Returns true if customerId is assoicated with appointment
-        public static bool appointExist(string custID)
+        public static bool checkAppointment(string custID)
         {
             Console.WriteLine(custID);
 
@@ -612,8 +595,7 @@ namespace Appointment_Tracker
             }
             return false;
         }
-        //removes all appointments with customerId
-        public static void noCustAppointments(string custID)
+        public static void deleteAppointment(string custID)
         {
             MySqlConnection conn = new MySqlConnection(dataString);
             conn.Open();
