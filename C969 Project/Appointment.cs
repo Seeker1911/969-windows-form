@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     public partial class Appointment : Form
     {
@@ -29,21 +24,19 @@ namespace C969_Project
             try
             {
                 string item = typeComboBox.SelectedItem.ToString();
-                //Pass item to DBhelper and get back dic of counts for appoints that month with type
-                //Grab List & convert
-                IDictionary<string, object> dictionary = DBHelper.reportAppoint(item);
-                janResult.Text = dictionary["Jan"].ToString();
-                febResult.Text = dictionary["Feb"].ToString();
-                marResult.Text = dictionary["Mar"].ToString();
-                aprResult.Text = dictionary["Apr"].ToString();
+                IDictionary<string, object> dictionary = DBHelper.appointmentReport(item);
+                janResult.Text = dictionary["January"].ToString();
+                febResult.Text = dictionary["February"].ToString();
+                marResult.Text = dictionary["March"].ToString();
+                aprResult.Text = dictionary["April"].ToString();
                 mayResult.Text = dictionary["May"].ToString();
-                junResult.Text = dictionary["Jun"].ToString();
-                julResult.Text = dictionary["Jul"].ToString();
-                augResult.Text = dictionary["Aug"].ToString();
-                septResult.Text = dictionary["Sep"].ToString();
-                octResult.Text = dictionary["Oct"].ToString();
-                novResult.Text = dictionary["Nov"].ToString();
-                decResult.Text = dictionary["Dec"].ToString();
+                junResult.Text = dictionary["June"].ToString();
+                julResult.Text = dictionary["July"].ToString();
+                augResult.Text = dictionary["August"].ToString();
+                septResult.Text = dictionary["September"].ToString();
+                octResult.Text = dictionary["October"].ToString();
+                novResult.Text = dictionary["November"].ToString();
+                decResult.Text = dictionary["December"].ToString();
             }
             catch (Exception ex) {
                 Console.WriteLine(ex);

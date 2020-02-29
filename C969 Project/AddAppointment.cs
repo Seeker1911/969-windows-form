@@ -1,75 +1,62 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
 
-    public partial class AddAppoint : Form
+    public partial class AddAppointment : Form
     {
         public string dataString = DBHelper.getDataString();
-        public AddAppoint()
+        public AddAppointment()
         {
             InitializeComponent();
-            fillCust();
+            GetCustomerInfo();
             endDTP.Value = endDTP.Value.AddMinutes(30);
 
         }
 
-        public void fillCust()
+        public void GetCustomerInfo()
         {
             MySqlConnection conn = new MySqlConnection(dataString);
 
             try
             {
-                string query = "SELECT customerId, concat(customerName, ' -- ID: ', customerId) as Display FROM customer;";
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                string query = "SELECT customerId, customerName as Display FROM customer;";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Cust");
+                DataSet data = new DataSet();
+                adapter.Fill(data, "Customer");
                 custComboBox.DisplayMember = "Display";
                 custComboBox.ValueMember = "customerId";
-                custComboBox.DataSource = ds.Tables["Cust"];
+                custComboBox.DataSource = data.Tables["Customer"];
             }
             catch (Exception ex)
             {
                 // write exception info to log or anything else
-                MessageBox.Show("Error occured! " + ex);
+                MessageBox.Show("error: " + ex);
             }
         }
 
-        private void CreateCusButton_Click(object sender, EventArgs e)
+        private void CreateCustomerButton(object sender, EventArgs e)
         {
-            bool pass = validator();
+            bool pass = validateInput();
             if (pass)
             {
                 if (custComboBox.SelectedItem != null)
                 {
-                    //Have a customer selected so lets add the appointment
-                    //customerID
                     DataRowView drv = custComboBox.SelectedItem as DataRowView;
                     int custID = Convert.ToInt32(custComboBox.SelectedValue);
-                    //grab data fields from form
-
                     DateTime start = startDTP.Value.ToUniversalTime();
                     DateTime end = endDTP.Value.ToUniversalTime();
                     //Validations
-                    //appointment is not being set outside business hours
-                    //appointment is not being set overlapping another appointment
-                    int validated = appointmentValid(start, end);
+                    int validated = appointmentValidator(start, end);
 
                     switch (validated)
                     {
                         case 1:
-                            MessageBox.Show("This appointment does not fall within business hours.");
+                            MessageBox.Show(@"This appointment does not fall within business hours.");
                             break;
                         case 2:
                             MessageBox.Show("This appointment Overlaps with another appointment.");
@@ -95,36 +82,34 @@ namespace C969_Project
 
         }
 
-        public int appointmentValid(DateTime start, DateTime end)
+        public int appointmentValidator(DateTime start, DateTime end)
         {
             DateTime localStart = start.ToLocalTime();
             DateTime localEnd = end.ToLocalTime();
-
             DateTime businessStart = DateTime.Today.AddHours(8);
             DateTime businessEnd = DateTime.Today.AddHours(17);
 
-            //return 1 for outside business hours (8am - 5pm local)
+            //outside allowed hours
             if (localStart.TimeOfDay < businessStart.TimeOfDay || localEnd.TimeOfDay > businessEnd.TimeOfDay)
             {
                 return 1;
             }
+            //overlap
             if (DBHelper.overlap(start, end) != 0)
             {
                 return 2;
             }
-            //return 2 for failed overlapp
-            //DB? Or can we look at Dashboard table
-            //return 3 for end before start
+            //start after end
             if (localStart.TimeOfDay > localEnd.TimeOfDay)
             {
                 return 3;
             }
-            //return 4 for appoinment not same day
+            //Not same day
             if (localStart.ToShortDateString() != localEnd.ToShortDateString())
             {
                 return 4;
             }
-            //return 0 pass 
+            //pass 
             return 0;
         }
 
@@ -134,17 +119,17 @@ namespace C969_Project
             this.Close();
         }
 
-        private bool validator()
+        private bool validateInput()
         {
 
             if (emptyCheck() == false)
             {
-                MessageBox.Show("Please complete all Appointment Information fields.");
+                MessageBox.Show(@"Please fill out all Information fields.");
                 return false;
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(titleTextbox.Text, "[^a-zA-Z]+$"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(contactTextbox.Text, "[^a-zA-Z]+$"))
             {
-                showError(titleLabel.Text);
+                showError(contactLabel.Text);
                 return false;
             }
             if (System.Text.RegularExpressions.Regex.IsMatch(descriptionTextbox.Text, "[^a-zA-Z]+$"))
@@ -157,9 +142,9 @@ namespace C969_Project
                 showError(locationLabel.Text);
                 return false;
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(contactTextbox.Text, "[^a-zA-Z]+$"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(titleTextbox.Text, "[^a-zA-Z]+$"))
             {
-                showError(contactLabel.Text);
+                showError(titleLabel.Text);
                 return false;
             }
             if (typeCombobox.SelectedIndex == -1)
@@ -178,18 +163,17 @@ namespace C969_Project
         }
         private bool emptyCheck()
         {
-            foreach (Control c in this.Controls)
+            foreach (Control con in this.Controls)
             {
-                if (c is TextBox)
+                if (con is TextBox textBox)
                 {
-                    TextBox textBox = c as TextBox;
                     if (textBox.Text == string.Empty)
                     {
                         return false;
                     }
                 }
-                if (c is ComboBox) {
-                    ComboBox combo = c as ComboBox;
+                if (con is ComboBox) {
+                    ComboBox combo = con as ComboBox;
                     if (combo.SelectedIndex == -1) {
                         return false;
                     }

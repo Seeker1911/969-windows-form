@@ -4,9 +4,9 @@
     <e p="C:\Users\michael mead\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\michael mead\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_C969 Project.-1528304234.00" t="ExcludeRecursive" />
     <e p="C:\Users\michael mead\RiderProjects\C969-Project\C969 Project" t="IncludeRecursive">
-      <e p="AddAppoint.cs" t="Include" />
       <e p="AddAppoint.Designer.cs" t="Include" />
       <e p="AddAppoint.resx" t="Include" />
+      <e p="AddAppointment.cs" t="Include" />
       <e p="App.config" t="Include" />
       <e p="Appointment.cs" t="Include" />
       <e p="Appointment.Designer.cs" t="Include" />

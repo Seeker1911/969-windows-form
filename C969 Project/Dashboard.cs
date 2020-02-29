@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     public partial class Dashboard : Form
     {
@@ -117,7 +117,7 @@ namespace C969_Project
 
         private void AddApptButton_Click(object sender, EventArgs e)
         {
-            Form addPoint = new AddAppoint();
+            Form addPoint = new AddAppointment();
             addPoint.Owner = this;
             addPoint.Show();
             this.Hide();

@@ -1,4 +1,4 @@
-﻿namespace C969_Project
+﻿namespace Appointment_Tracker
 {
     partial class Schedule
     {

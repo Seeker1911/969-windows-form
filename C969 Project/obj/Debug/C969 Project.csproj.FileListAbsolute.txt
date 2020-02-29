@@ -33,19 +33,19 @@ C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\bin\Debug\MySql.Da
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\bin\Debug\Google.Protobuf.xml
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\bin\Debug\MySql.Data.xml
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969 Project.csprojAssemblyReference.cache
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.AddAppoint.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Appointment.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.CreateCustomer.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Dashboard.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.DeleteAppoint.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.DeleteCustomer.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Login.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Properties.Resources.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Schedule.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.Timecard.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.UpdateAppoint.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969_Project.UpdateCustomer.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969 Project.csproj.GenerateResource.cache
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969 Project.csproj.CopyComplete
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969 Project.exe
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\C969 Project.pdb
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Appointment.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.CreateCustomer.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Dashboard.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.DeleteAppoint.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.DeleteCustomer.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Login.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Schedule.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Timecard.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.UpdateAppoint.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.UpdateCustomer.resources
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.AddAppointment.resources

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace C969_Project
+namespace Appointment_Tracker
 {
     public partial class UpdateAppoint : Form
     {
@@ -40,7 +40,7 @@ namespace C969_Project
             DataRowView drv = appointComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(appointComboBox.SelectedValue);
 
-            var appointList = DBHelper.searchAppointment(id);
+            var appointList = DBHelper.lookupAppointment(id);
             setAppointList(appointList);
 
 
