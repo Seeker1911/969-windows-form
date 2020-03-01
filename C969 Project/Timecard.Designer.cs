@@ -1,4 +1,4 @@
-﻿namespace Appointment_Tracker
+﻿﻿namespace Appointment_Tracker
 {
     partial class Logins
     {
