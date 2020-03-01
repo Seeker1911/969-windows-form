@@ -134,7 +134,7 @@ namespace Appointment_Tracker
 
                 try
                 {
-                    string query = "select appointmentId, concat(appointmentId, (select  concat(' -- Customer: ', customerName) from customer where appointment.customerId = customer.customerId))  as Display from appointment where end > now();";
+                    string query = "select appointmentId, concat('apt. ID: ' , appointmentId, (select  concat(' -- Customer: ', customerName) from customer where appointment.customerId = customer.customerId))  as Display from appointment where end > now();";
                     MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
                     conn.Open();
                     DataSet ds = new DataSet();
@@ -155,7 +155,8 @@ namespace Appointment_Tracker
 
                 try
                 {
-                    string query = $"SELECT customerId, customerName as Display FROM customer;";
+                    string query = $"SELECT c.customerId, concat('apt. ID: ', a.appointmentId, ' : ', c.customerName) as Display " +
+                                   $"FROM customer c inner join appointment a on c.customerId = a.customerId;";
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     conn.Open();
                     DataSet dataset = new DataSet();
