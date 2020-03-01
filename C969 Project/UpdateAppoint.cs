@@ -17,10 +17,10 @@ namespace Appointment_Tracker
         public UpdateAppoint()
         {
             InitializeComponent();
-            fillAppoint();
+            fillAppointment();
         }
 
-        public void setAppointList(List<KeyValuePair<string, object>> list)
+        public void setAppointmentList(List<KeyValuePair<string, object>> list)
         {
 
             AppointList = list;
@@ -40,18 +40,15 @@ namespace Appointment_Tracker
             DataRowView drv = appointComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(appointComboBox.SelectedValue);
 
-            var appointList = DBHelper.lookupAppointment(id);
-            setAppointList(appointList);
+            var appointmentList = DBHelper.lookupAppointment(id);
+            setAppointmentList(appointmentList);
 
 
-            if (appointList != null)
+            if (appointmentList != null)
             {
-                //Enable fields
-                enabling(true);
-                //Input data into text fields
-                fillFields(appointList);
-                //Grabs customer assoicated with appointment
-                fillCust(Convert.ToInt32(appointList.First(kvp => kvp.Key == "customerId").Value.ToString()));
+                setEnableStatus(true);
+                fillFields(appointmentList);
+                fillCust(Convert.ToInt32(appointmentList.First(kvp => kvp.Key == "customerId").Value.ToString()));
             }
 
         }
@@ -59,7 +56,7 @@ namespace Appointment_Tracker
         private void ClearButton_Click(object sender, EventArgs e)
         {
             //Locks fields
-            enabling(false);
+            setEnableStatus(false);
             //Lamba used for function to clear fields
             Action<Control.ControlCollection> clearIT = null;
 
@@ -83,7 +80,7 @@ namespace Appointment_Tracker
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            bool pass = validator();
+            bool pass = Validator();
             if (pass)
             {
                 DialogResult youSure = MessageBox.Show("Are you sure you want to update this Appointment?", "", MessageBoxButtons.YesNo);
@@ -112,7 +109,7 @@ namespace Appointment_Tracker
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Error occured! " + ex);
+                        Console.WriteLine(@"error: " + ex);
                     }
                     finally
                     {
@@ -131,24 +128,24 @@ namespace Appointment_Tracker
                 this.Close();
             }
 
-            public void fillAppoint()
+            public void fillAppointment()
             {
                 MySqlConnection conn = new MySqlConnection(DBHelper.getDataString());
 
                 try
                 {
-                    string query = "select appointmentId, concat(appointmentId, (select  concat(' -- Customer: ', customerName) from customer where appointment.customerId = customer.customerId))  as Display from appointment where end > now();";
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                    string query = "select appointmentId, concat('apt. ID: ' , appointmentId, (select  concat(' -- Customer: ', customerName) from customer where appointment.customerId = customer.customerId))  as Display from appointment where end > now();";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     conn.Open();
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "Appoint");
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet, "Appointment");
                     appointComboBox.DisplayMember = "Display";
                     appointComboBox.ValueMember = "appointmentId";
-                    appointComboBox.DataSource = ds.Tables["Appoint"];
+                    appointComboBox.DataSource = dataSet.Tables["Appointment"];
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error occured! " + ex);
+                    Console.WriteLine(@"error: " + ex);
                 }
             }
 
@@ -158,24 +155,25 @@ namespace Appointment_Tracker
 
                 try
                 {
-                    string query = $"SELECT customerId, concat(customerName, ' -- ID: ', customerId) as Display FROM customer;";
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                    string query = $"SELECT c.customerId, concat('apt. ID: ', a.appointmentId, ' : ', c.customerName) as Display " +
+                                   $"FROM customer c inner join appointment a on c.customerId = a.customerId;";
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     conn.Open();
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "Cust");
+                    DataSet dataset = new DataSet();
+                    adapter.Fill(dataset, "Customer");
                     customerComboBox.DisplayMember = "Display";
                     customerComboBox.ValueMember = "customerID";
-                    customerComboBox.DataSource = ds.Tables["Cust"];
+                    customerComboBox.DataSource = dataset.Tables["Customer"];
                     DataRowView drv = customerComboBox.SelectedItem as DataRowView;
                     customerComboBox.SelectedValue = custID;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error occured! " + ex);
+                    Console.WriteLine(@"error: " + ex);
                 }
             }
 
-            private void enabling(bool status)
+            private void setEnableStatus(bool status)
             {
                 customerComboBox.Enabled = status;
                 titleTextbox.Enabled = status;
@@ -190,7 +188,7 @@ namespace Appointment_Tracker
 
             private void fillFields(List<KeyValuePair<string, object>> AppointList)
             {
-                // Lambda used to set text values from kvp
+                // Lambda used to set text values
                 titleTextbox.Text = AppointList.First(kvp => kvp.Key == "title").Value.ToString();
                 descriptionTextbox.Text = AppointList.First(kvp => kvp.Key == "description").Value.ToString();
                 locationTextbox.Text = AppointList.First(kvp => kvp.Key == "location").Value.ToString();
@@ -203,67 +201,67 @@ namespace Appointment_Tracker
 
             }
 
-        private bool validator()
+        private bool Validator()
         {
 
-            if (emptyCheck() == false)
+            if (checkIfEmpty())
             {
-                MessageBox.Show("Please complete all Appointment Information fields.");
+                MessageBox.Show(@"Please complete all Appointment Information fields.");
                 return false;
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(titleTextbox.Text, "[^a-zA-Z]+$"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(titleTextbox.Text, "[^a-zA-Z0-9]+$"))
             {
-                showError(titleLabel.Text);
+                displayError(titleLabel.Text);
                 return false;
             }
             if (System.Text.RegularExpressions.Regex.IsMatch(descriptionTextbox.Text, "[^a-zA-Z]+$"))
             {
-                showError(descriptionLabel.Text);
+                displayError(descriptionLabel.Text);
                 return false;
             }
             if (System.Text.RegularExpressions.Regex.IsMatch(locationTextbox.Text, "[^a-zA-Z]+$"))
             {
-                showError(locationLabel.Text);
+                displayError(locationLabel.Text);
                 return false;
             }
             if (System.Text.RegularExpressions.Regex.IsMatch(contactTextbox.Text, "[^a-zA-Z]+$"))
             {
-                showError(contactLabel.Text);
+                displayError(contactLabel.Text);
                 return false;
             }
             if (typeCombobox.SelectedIndex == -1)
             {
-                showError(typeLabel.Text);
+                displayError(typeLabel.Text);
                 return false;
             }
             if (customerComboBox.SelectedIndex == -1)
             {
-                showError(customerLabel.Text);
+                displayError(customerLabel.Text);
                 return false;
             }
 
             return true;
         }
 
-        private void showError(string item)
+        private void displayError(string item)
         {
-            MessageBox.Show("Please enter a valid information for " + item);
+            MessageBox.Show(@"Please enter a valid information for " + item);
 
         }
-        private bool emptyCheck()
+        private bool checkIfEmpty()
         {
-            foreach (Control c in this.Controls)
+            foreach (Control con in this.Controls)
             {
-                if (c is TextBox)
+                if (con is TextBox)
                 {
-                    TextBox textBox = c as TextBox;
+                    TextBox textBox = con as TextBox;
                     if (textBox.Text == string.Empty)
                     {
-                        return false;
+                        return true;
                     }
                 }
             }
-            return true;
+            return false;
         }
     }
     }

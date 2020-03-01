@@ -1,37 +1,30 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Appointment_Tracker
 {
     public partial class UpdateCustomer : Form
     {
-        public static List<KeyValuePair<string, object>> CustList;
+        public static List<KeyValuePair<string, object>> CustomerList;
 
         public UpdateCustomer()
         {
             InitializeComponent();
-            fillCust();
+            CustomerForm();
         }
 
-        public void setCustList(List<KeyValuePair<string, object>> list)
+        public void setCustomerList(List<KeyValuePair<string, object>> list)
         {
-
-            CustList = list;
-
+            CustomerList = list;
         }
 
-        public static List<KeyValuePair<string, object>> getCustList()
+        public static List<KeyValuePair<string, object>> getCustomerList()
         {
-
-            return CustList;
+            return CustomerList;
         }
 
 
@@ -42,35 +35,35 @@ namespace Appointment_Tracker
             this.Hide();
         }
 
-        public void fillCust()
+        public void CustomerForm()
         {
             MySqlConnection conn = new MySqlConnection(DBHelper.getDataString());
 
             try
             {
-                string query = "SELECT customerId, concat(customerName, ' -- ID: ', customerId) as Display FROM customer;";
-                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                string query = "SELECT customerId, customerName as Display FROM customer;";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                 conn.Open();
-                DataSet ds = new DataSet();
-                da.Fill(ds, "Cust");
+                DataSet data = new DataSet();
+                adapter.Fill(data, "Customer");
                 custComboBox.DisplayMember = "Display";
                 custComboBox.ValueMember = "customerID";
-                custComboBox.DataSource = ds.Tables["Cust"];
+                custComboBox.DataSource = data.Tables["Customer"];
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occured! " + ex);
+                MessageBox.Show(@"error: " + ex);
             }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            enabling(false);
-            //Lamba used for function to clear fields
-            Action<Control.ControlCollection> clearIT = null;
+            Enabling(false);
+            //Lambda used for function to clear fields
+            Action<Control.ControlCollection> clearForm = null;
 
-            clearIT = (controls) =>
+            clearForm = (controls) =>
             {
                 foreach (Control option in controls)
                     if (option is TextBox)
@@ -78,35 +71,28 @@ namespace Appointment_Tracker
                     else if (option is RadioButton)
                         (option as RadioButton).Checked = false;
                     else
-                        clearIT(option.Controls);
+                        clearForm(option.Controls);
             };
 
-            clearIT(Controls);
+            clearForm(Controls);
         }
 
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
            
-            //Grabs ID
             DataRowView drv = custComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(custComboBox.SelectedValue);
-            var custList = DBHelper.searchCustomer(id);
-            setCustList(custList);
-            //Calls db helper to get all customer results as object array
-            //If we got a null array, don't continue
-            if (custList != null)
+            var customerList = DBHelper.searchCustomer(id);
+            setCustomerList(customerList);
+            if (customerList != null)
             {
-                //Enable fields
-                enabling(true);
-                //Input data into text fields
-                fillFields(custList);
+                Enabling(true);
+                FillFields(customerList);
             }
-            
         }
 
-
-        private void enabling(bool status)
+        private void Enabling(bool status)
         {
             nameTextbox.Enabled = status;
             phoneTextbox.Enabled = status;
@@ -119,7 +105,7 @@ namespace Appointment_Tracker
             updateButton.Enabled = status;
         }
 
-        private void fillFields(List<KeyValuePair<string, object>> custList)
+        private void FillFields(List<KeyValuePair<string, object>> custList)
         {
             // Lambda used to set text values from kvp
             nameTextbox.Text = custList.First(kvp => kvp.Key == "customerName").Value.ToString();
@@ -140,15 +126,14 @@ namespace Appointment_Tracker
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            DialogResult youSure = MessageBox.Show("Are you sure you want to update this customer?", "", MessageBoxButtons.YesNo);
-            if (youSure == DialogResult.Yes)
+            DialogResult areYouSure = MessageBox.Show(@"Are you sure you want to update this customer?", "", MessageBoxButtons.YesNo);
+            if (areYouSure == DialogResult.Yes)
             {
                 try
                 {
-                    //Grab List & convert
-                    var list = getCustList();
+                    //Convert the list to dictionary
+                    var list = getCustomerList();
                     IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
-                    //replace values for the keys in the form         
                     dictionary["customerName"] = nameTextbox.Text;
                     dictionary["phone"] = phoneTextbox.Text;
                     dictionary["address"] = addressTextbox.Text;
@@ -157,9 +142,7 @@ namespace Appointment_Tracker
                     dictionary["country"] = countryTextbox.Text;
                     dictionary["active"] = yesRadio.Checked ? 1 : 0;
 
-                    //Pass the updated IDictionary to dbhelper to update the database
                     DBHelper.updateCustomer(dictionary);
-
                 }
                 catch (Exception ex)
                 {
@@ -168,7 +151,7 @@ namespace Appointment_Tracker
                 finally
                 {
                     clearButton_Click(null, new EventArgs());
-                    MessageBox.Show("Customer Record Updated");
+                    MessageBox.Show(@"Customer Record Updated");
 
                     this.Owner.Show();
                     this.Close();

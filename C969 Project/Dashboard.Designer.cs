@@ -256,7 +256,7 @@ namespace Appointment_Tracker
             this.loginsReportButton.Name = "loginsReportButton";
             this.loginsReportButton.Size = new System.Drawing.Size(121, 31);
             this.loginsReportButton.TabIndex = 5;
-            this.loginsReportButton.Text = "Timecard";
+            this.loginsReportButton.Text = "Logins";
             this.loginsReportButton.UseVisualStyleBackColor = false;
             this.loginsReportButton.Click += new System.EventHandler(this.cusReportButton_Click);
             // 

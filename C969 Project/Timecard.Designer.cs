@@ -1,6 +1,6 @@
 ﻿namespace Appointment_Tracker
 {
-    partial class Timecard
+    partial class Logins
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 =
                 new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Timecard));
+                new System.ComponentModel.ComponentResourceManager(typeof(Logins));
             this.backButton = new System.Windows.Forms.Button();
             this.reportButton = new System.Windows.Forms.Button();
             this.scheduleLabel = new System.Windows.Forms.Label();
@@ -77,7 +77,8 @@
             this.scheduleLabel.Name = "scheduleLabel";
             this.scheduleLabel.Size = new System.Drawing.Size(247, 29);
             this.scheduleLabel.TabIndex = 53;
-            this.scheduleLabel.Text = "Print User Timecard";
+            this.scheduleLabel.Text = "Print User Logins";
+            this.scheduleLabel.Click += new System.EventHandler(this.scheduleLabel_Click);
             // 
             // dataGridView
             // 
@@ -108,7 +109,7 @@
             this.dataGridView.Size = new System.Drawing.Size(610, 361);
             this.dataGridView.TabIndex = 56;
             // 
-            // Timecard
+            // Logins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +119,8 @@
             this.Controls.Add(this.reportButton);
             this.Controls.Add(this.scheduleLabel);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-            this.Name = "Timecard";
-            this.Text = "Timecard";
+            this.Name = "Logins";
+            this.Text = "Logins report";
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

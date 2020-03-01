@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Appointment_Tracker
 {
-    public partial class Timecard : Form
+    public partial class Logins : Form
     {
-        public Timecard()
+        public Logins()
         {
             InitializeComponent();
         }
@@ -40,6 +40,11 @@ namespace Appointment_Tracker
             }
             dataGridView.DataSource = dataStrings.Select(x => new { Value = x }).ToList();
             dataGridView.Show();
+        }
+
+        private void scheduleLabel_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
