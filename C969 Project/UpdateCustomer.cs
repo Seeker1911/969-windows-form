@@ -1,12 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Appointment_Tracker
@@ -23,14 +19,11 @@ namespace Appointment_Tracker
 
         public void setCustomerList(List<KeyValuePair<string, object>> list)
         {
-
             CustomerList = list;
-
         }
 
         public static List<KeyValuePair<string, object>> getCustomerList()
         {
-
             return CustomerList;
         }
 
@@ -88,7 +81,6 @@ namespace Appointment_Tracker
         private void SearchButton_Click(object sender, EventArgs e)
         {
            
-            //Grabs ID
             DataRowView drv = custComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(custComboBox.SelectedValue);
             var custList = DBHelper.searchCustomer(id);

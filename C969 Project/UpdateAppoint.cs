@@ -17,7 +17,7 @@ namespace Appointment_Tracker
         public UpdateAppoint()
         {
             InitializeComponent();
-            fillAppoint();
+            fillAppointment();
         }
 
         public void setAppointmentList(List<KeyValuePair<string, object>> list)
@@ -128,20 +128,20 @@ namespace Appointment_Tracker
                 this.Close();
             }
 
-            public void fillAppoint()
+            public void fillAppointment()
             {
                 MySqlConnection conn = new MySqlConnection(DBHelper.getDataString());
 
                 try
                 {
                     string query = "select appointmentId, concat('apt. ID: ' , appointmentId, (select  concat(' -- Customer: ', customerName) from customer where appointment.customerId = customer.customerId))  as Display from appointment where end > now();";
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     conn.Open();
-                    DataSet ds = new DataSet();
-                    da.Fill(ds, "Appoint");
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet, "Appointment");
                     appointComboBox.DisplayMember = "Display";
                     appointComboBox.ValueMember = "appointmentId";
-                    appointComboBox.DataSource = ds.Tables["Appoint"];
+                    appointComboBox.DataSource = dataSet.Tables["Appointment"];
                 }
                 catch (Exception ex)
                 {

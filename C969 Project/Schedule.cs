@@ -1,40 +1,35 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Appointment_Tracker
 {
     public partial class Schedule : Form
     {
-        public static List<KeyValuePair<string, object>> userList;
+        public static List<KeyValuePair<string, object>> UserList;
 
         public Schedule()
         {
             InitializeComponent();
-            fillConsol();
+            UserDisplay();
         }
-        public void setUserList(List<KeyValuePair<string, object>> list)
+        public void SetUserList(List<KeyValuePair<string, object>> list)
         {
 
-            userList = list;
+            UserList = list;
 
         }
 
-        public static List<KeyValuePair<string, object>> getUserList()
+        public static List<KeyValuePair<string, object>> GetUserList()
         {
 
-            return userList;
+            return UserList;
         }
 
 
-        public void fillConsol()
+        public void UserDisplay()
         {
             MySqlConnection conn = new MySqlConnection(DBHelper.getDataString());
 
@@ -51,8 +46,7 @@ namespace Appointment_Tracker
             }
             catch (Exception ex)
             {
-                // write exception info to log or anything else
-                Console.WriteLine("Error occured! " + ex);
+                Console.WriteLine(@"error: " + ex);
             }
         }
 
