@@ -14,42 +14,37 @@ namespace Appointment_Tracker
     public partial class Login : Form
     {
 
-        public string error = "The username and password entered are not valid.";
-        public string exit = "Are you sure to exit this Application?";
+        public string error = "The username and password entered are incorrect.";
+        public string exit = "Are you sure ?";
         public Login()
         {
             InitializeComponent();
-            //Supports English or Italian(LCID == 1040);
-            languageCheck(CultureInfo.CurrentUICulture.LCID);
-            //languageCheck(1040);
+            //Supports English or French(LCID == 1036);
+            CheckLanguage(CultureInfo.CurrentUICulture.LCID);
         }
 
-        private void languageCheck(int LCID)
+        private void CheckLanguage(int LCID)
         {
-            if (LCID == 1040)
+            if (LCID == 1036)
             {
-                this.Text = "Accesso";
-                infoLabel.Text = "Inserisci le informazioni di accesso";
-                usernameLabel.Text = "Nome utente";
-                passwordLabel.Text = "Parola d'ordine";
-                loginButton.Text = "Accesso";
-                cancelButton.Text = "Annulla";
-                error = "Il nome utente e la password inseriti non sono validi.";
-                exit = "sei sicuro di uscire da questa Applicazione?";
+                this.Text = "S'identifier";
+                infoLabel.Text = "entrez les informations de connexion";
+                usernameLabel.Text = "Nom d'utilisateur ";
+                passwordLabel.Text = "mot de passe";
+                loginButton.Text = "s'identifier";
+                cancelButton.Text = "annuler";
+                error = "nom ou mot de passe incorrect.";
+                exit = "etes-vous sur de vouloir quitter?";
             }
         }
 
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            //Call to DB to make sure user and pass are correct
             if (DBHelper.userCheck(userTextbox.Text, passTextbox.Text) == 1)
             {
-                //Log in text file username and time of login
                 Logger.signIn(DBHelper.getCurrentUserName());
-                //Show Dashboard
                 Form dash = new Dashboard();
-                //Function that handles appointment reminder
                 Logger.reminder();
                 dash.Show();
                 this.Hide();
@@ -64,11 +59,10 @@ namespace Appointment_Tracker
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            var confirm = MessageBox.Show(exit, this.Text,
-                                   MessageBoxButtons.YesNo);
+            var confirm = MessageBox.Show(exit, this.Text, MessageBoxButtons.YesNo);
             if (confirm == DialogResult.Yes)
             {
-                this.Close();
+                Close();
             }
         }
     }
