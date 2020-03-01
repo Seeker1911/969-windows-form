@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteAppoint));
             this.customerLabel = new System.Windows.Forms.Label();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.clearButton = new System.Windows.Forms.Button();
@@ -57,9 +56,9 @@
             // customerLabel
             // 
             this.customerLabel.AutoSize = true;
-            this.customerLabel.Location = new System.Drawing.Point(23, 88);
+            this.customerLabel.Location = new System.Drawing.Point(27, 102);
             this.customerLabel.Name = "customerLabel";
-            this.customerLabel.Size = new System.Drawing.Size(54, 13);
+            this.customerLabel.Size = new System.Drawing.Size(62, 15);
             this.customerLabel.TabIndex = 100;
             this.customerLabel.Text = "Customer:";
             // 
@@ -67,9 +66,9 @@
             // 
             this.customerComboBox.Enabled = false;
             this.customerComboBox.FormattingEnabled = true;
-            this.customerComboBox.Location = new System.Drawing.Point(120, 85);
+            this.customerComboBox.Location = new System.Drawing.Point(140, 98);
             this.customerComboBox.Name = "customerComboBox";
-            this.customerComboBox.Size = new System.Drawing.Size(192, 21);
+            this.customerComboBox.Size = new System.Drawing.Size(223, 23);
             this.customerComboBox.TabIndex = 99;
             // 
             // clearButton
@@ -78,9 +77,9 @@
             this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.clearButton.Location = new System.Drawing.Point(197, 441);
+            this.clearButton.Location = new System.Drawing.Point(230, 509);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(96, 31);
+            this.clearButton.Size = new System.Drawing.Size(112, 36);
             this.clearButton.TabIndex = 98;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = false;
@@ -92,9 +91,9 @@
             this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.searchButton.Location = new System.Drawing.Point(56, 441);
+            this.searchButton.Location = new System.Drawing.Point(65, 509);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(96, 31);
+            this.searchButton.Size = new System.Drawing.Size(112, 36);
             this.searchButton.TabIndex = 97;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -106,9 +105,9 @@
             this.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButton.Location = new System.Drawing.Point(197, 492);
+            this.cancelButton.Location = new System.Drawing.Point(230, 568);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(96, 31);
+            this.cancelButton.Size = new System.Drawing.Size(112, 36);
             this.cancelButton.TabIndex = 96;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -121,9 +120,9 @@
             this.deleteButton.Enabled = false;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteButton.Location = new System.Drawing.Point(55, 492);
+            this.deleteButton.Location = new System.Drawing.Point(64, 568);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(96, 31);
+            this.deleteButton.Size = new System.Drawing.Size(112, 36);
             this.deleteButton.TabIndex = 95;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = false;
@@ -132,18 +131,18 @@
             // endLabel
             // 
             this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(23, 398);
+            this.endLabel.Location = new System.Drawing.Point(27, 459);
             this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(55, 13);
+            this.endLabel.Size = new System.Drawing.Size(59, 15);
             this.endLabel.TabIndex = 94;
             this.endLabel.Text = "End Time:";
             // 
             // startLabel
             // 
             this.startLabel.AutoSize = true;
-            this.startLabel.Location = new System.Drawing.Point(23, 349);
+            this.startLabel.Location = new System.Drawing.Point(27, 403);
             this.startLabel.Name = "startLabel";
-            this.startLabel.Size = new System.Drawing.Size(58, 13);
+            this.startLabel.Size = new System.Drawing.Size(63, 15);
             this.startLabel.TabIndex = 93;
             this.startLabel.Text = "Start Time:";
             // 
@@ -152,9 +151,9 @@
             this.endDTP.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.endDTP.Enabled = false;
             this.endDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDTP.Location = new System.Drawing.Point(120, 392);
+            this.endDTP.Location = new System.Drawing.Point(140, 452);
             this.endDTP.Name = "endDTP";
-            this.endDTP.Size = new System.Drawing.Size(192, 20);
+            this.endDTP.Size = new System.Drawing.Size(223, 23);
             this.endDTP.TabIndex = 92;
             // 
             // startDTP
@@ -162,96 +161,96 @@
             this.startDTP.CustomFormat = "MM/dd/yyyy hh:mm tt";
             this.startDTP.Enabled = false;
             this.startDTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDTP.Location = new System.Drawing.Point(120, 343);
+            this.startDTP.Location = new System.Drawing.Point(140, 396);
             this.startDTP.Name = "startDTP";
-            this.startDTP.Size = new System.Drawing.Size(192, 20);
+            this.startDTP.Size = new System.Drawing.Size(223, 23);
             this.startDTP.TabIndex = 91;
             // 
             // contactTextbox
             // 
             this.contactTextbox.Enabled = false;
-            this.contactTextbox.Location = new System.Drawing.Point(120, 262);
+            this.contactTextbox.Location = new System.Drawing.Point(140, 302);
             this.contactTextbox.Name = "contactTextbox";
-            this.contactTextbox.Size = new System.Drawing.Size(192, 20);
+            this.contactTextbox.Size = new System.Drawing.Size(223, 23);
             this.contactTextbox.TabIndex = 89;
             // 
             // locationTextbox
             // 
             this.locationTextbox.Enabled = false;
-            this.locationTextbox.Location = new System.Drawing.Point(120, 228);
+            this.locationTextbox.Location = new System.Drawing.Point(140, 263);
             this.locationTextbox.Name = "locationTextbox";
-            this.locationTextbox.Size = new System.Drawing.Size(192, 20);
+            this.locationTextbox.Size = new System.Drawing.Size(223, 23);
             this.locationTextbox.TabIndex = 88;
             // 
             // descriptionTextbox
             // 
             this.descriptionTextbox.Enabled = false;
-            this.descriptionTextbox.Location = new System.Drawing.Point(120, 160);
+            this.descriptionTextbox.Location = new System.Drawing.Point(140, 185);
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
-            this.descriptionTextbox.Size = new System.Drawing.Size(192, 52);
+            this.descriptionTextbox.Size = new System.Drawing.Size(223, 59);
             this.descriptionTextbox.TabIndex = 87;
             // 
             // titleTextbox
             // 
             this.titleTextbox.Enabled = false;
-            this.titleTextbox.Location = new System.Drawing.Point(120, 121);
+            this.titleTextbox.Location = new System.Drawing.Point(140, 140);
             this.titleTextbox.MaxLength = 255;
             this.titleTextbox.Name = "titleTextbox";
-            this.titleTextbox.Size = new System.Drawing.Size(192, 20);
+            this.titleTextbox.Size = new System.Drawing.Size(223, 23);
             this.titleTextbox.TabIndex = 86;
             // 
             // typeLabel
             // 
             this.typeLabel.AutoSize = true;
-            this.typeLabel.Location = new System.Drawing.Point(23, 300);
+            this.typeLabel.Location = new System.Drawing.Point(27, 346);
             this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(34, 13);
+            this.typeLabel.Size = new System.Drawing.Size(34, 15);
             this.typeLabel.TabIndex = 85;
             this.typeLabel.Text = "Type:";
             // 
             // contactLabel
             // 
             this.contactLabel.AutoSize = true;
-            this.contactLabel.Location = new System.Drawing.Point(23, 265);
+            this.contactLabel.Location = new System.Drawing.Point(27, 306);
             this.contactLabel.Name = "contactLabel";
-            this.contactLabel.Size = new System.Drawing.Size(47, 13);
+            this.contactLabel.Size = new System.Drawing.Size(52, 15);
             this.contactLabel.TabIndex = 84;
             this.contactLabel.Text = "Contact:";
             // 
             // locationLabel
             // 
             this.locationLabel.AutoSize = true;
-            this.locationLabel.Location = new System.Drawing.Point(23, 231);
+            this.locationLabel.Location = new System.Drawing.Point(27, 267);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(51, 13);
+            this.locationLabel.Size = new System.Drawing.Size(56, 15);
             this.locationLabel.TabIndex = 83;
             this.locationLabel.Text = "Location:";
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Location = new System.Drawing.Point(23, 160);
+            this.descriptionLabel.Location = new System.Drawing.Point(27, 185);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            this.descriptionLabel.Size = new System.Drawing.Size(70, 15);
             this.descriptionLabel.TabIndex = 82;
             this.descriptionLabel.Text = "Description:";
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(23, 121);
+            this.titleLabel.Location = new System.Drawing.Point(27, 140);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(30, 13);
+            this.titleLabel.Size = new System.Drawing.Size(32, 15);
             this.titleLabel.TabIndex = 81;
             this.titleLabel.Text = "Title:";
             // 
             // appointSelectLabel
             // 
             this.appointSelectLabel.AutoSize = true;
-            this.appointSelectLabel.Location = new System.Drawing.Point(23, 47);
+            this.appointSelectLabel.Location = new System.Drawing.Point(27, 54);
             this.appointSelectLabel.Name = "appointSelectLabel";
-            this.appointSelectLabel.Size = new System.Drawing.Size(69, 13);
+            this.appointSelectLabel.Size = new System.Drawing.Size(81, 15);
             this.appointSelectLabel.TabIndex = 80;
             this.appointSelectLabel.Text = "Appointment:";
             // 
@@ -259,42 +258,36 @@
             // 
             this.appointLabel.AutoSize = true;
             this.appointLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.appointLabel.Location = new System.Drawing.Point(79, 9);
+            this.appointLabel.Location = new System.Drawing.Point(92, 10);
             this.appointLabel.Name = "appointLabel";
-            this.appointLabel.Size = new System.Drawing.Size(155, 13);
+            this.appointLabel.Size = new System.Drawing.Size(180, 15);
             this.appointLabel.TabIndex = 79;
             this.appointLabel.Text = "Delete Appointment Information";
             // 
             // appointComboBox
             // 
             this.appointComboBox.FormattingEnabled = true;
-            this.appointComboBox.Location = new System.Drawing.Point(120, 44);
+            this.appointComboBox.Location = new System.Drawing.Point(140, 51);
             this.appointComboBox.Name = "appointComboBox";
-            this.appointComboBox.Size = new System.Drawing.Size(192, 21);
+            this.appointComboBox.Size = new System.Drawing.Size(223, 23);
             this.appointComboBox.TabIndex = 78;
             // 
             // typeCombobox
             // 
             this.typeCombobox.Enabled = false;
             this.typeCombobox.FormattingEnabled = true;
-            this.typeCombobox.Items.AddRange(new object[] {
-            "Event",
-            "Follow Up",
-            "Initial Consultation",
-            "Lab Visit",
-            "Other",
-            "Physical",
-            "Sugery"});
-            this.typeCombobox.Location = new System.Drawing.Point(120, 292);
+            this.typeCombobox.Items.AddRange(new object[]
+                {"Event", "Follow Up", "Initial Consultation", "Lab Visit", "Other", "Physical", "Sugery"});
+            this.typeCombobox.Location = new System.Drawing.Point(140, 337);
             this.typeCombobox.Name = "typeCombobox";
-            this.typeCombobox.Size = new System.Drawing.Size(192, 21);
+            this.typeCombobox.Size = new System.Drawing.Size(223, 23);
             this.typeCombobox.TabIndex = 101;
             // 
             // DeleteAppoint
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 565);
+            this.ClientSize = new System.Drawing.Size(400, 652);
             this.Controls.Add(this.typeCombobox);
             this.Controls.Add(this.customerLabel);
             this.Controls.Add(this.customerComboBox);
@@ -318,13 +311,11 @@
             this.Controls.Add(this.appointSelectLabel);
             this.Controls.Add(this.appointLabel);
             this.Controls.Add(this.appointComboBox);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteAppoint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteAppoint";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -56,7 +56,6 @@
       <e p="UpdateCustomer.cs" t="Include" />
       <e p="UpdateCustomer.Designer.cs" t="Include" />
       <e p="UpdateCustomer.resx" t="Include" />
-      <e p="wguicon.ico" t="Include" />
     </e>
   </component>
 </project>

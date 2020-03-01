@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteCustomer));
             this.clearButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.deleteLabel = new System.Windows.Forms.Label();
@@ -59,9 +58,9 @@
             this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.clearButton.Location = new System.Drawing.Point(157, 342);
+            this.clearButton.Location = new System.Drawing.Point(183, 395);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(96, 31);
+            this.clearButton.Size = new System.Drawing.Size(112, 36);
             this.clearButton.TabIndex = 73;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = false;
@@ -73,9 +72,9 @@
             this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.searchButton.Location = new System.Drawing.Point(16, 342);
+            this.searchButton.Location = new System.Drawing.Point(19, 395);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(96, 31);
+            this.searchButton.Size = new System.Drawing.Size(112, 36);
             this.searchButton.TabIndex = 72;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = false;
@@ -84,9 +83,9 @@
             // deleteLabel
             // 
             this.deleteLabel.AutoSize = true;
-            this.deleteLabel.Location = new System.Drawing.Point(76, 9);
+            this.deleteLabel.Location = new System.Drawing.Point(89, 10);
             this.deleteLabel.Name = "deleteLabel";
-            this.deleteLabel.Size = new System.Drawing.Size(117, 13);
+            this.deleteLabel.Size = new System.Drawing.Size(130, 15);
             this.deleteLabel.TabIndex = 71;
             this.deleteLabel.Text = "Delete customer record";
             // 
@@ -96,9 +95,9 @@
             this.cancelButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButton.Location = new System.Drawing.Point(157, 393);
+            this.cancelButton.Location = new System.Drawing.Point(183, 453);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(96, 31);
+            this.cancelButton.Size = new System.Drawing.Size(112, 36);
             this.cancelButton.TabIndex = 70;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = false;
@@ -111,9 +110,9 @@
             this.deleteButton.Enabled = false;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteButton.Location = new System.Drawing.Point(15, 393);
+            this.deleteButton.Location = new System.Drawing.Point(17, 453);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(96, 31);
+            this.deleteButton.Size = new System.Drawing.Size(112, 36);
             this.deleteButton.TabIndex = 69;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = false;
@@ -123,9 +122,9 @@
             // 
             this.noRadio.AutoSize = true;
             this.noRadio.Enabled = false;
-            this.noRadio.Location = new System.Drawing.Point(214, 313);
+            this.noRadio.Location = new System.Drawing.Point(250, 361);
             this.noRadio.Name = "noRadio";
-            this.noRadio.Size = new System.Drawing.Size(39, 17);
+            this.noRadio.Size = new System.Drawing.Size(41, 19);
             this.noRadio.TabIndex = 68;
             this.noRadio.TabStop = true;
             this.noRadio.Text = "No";
@@ -135,9 +134,9 @@
             // 
             this.yesRadio.AutoSize = true;
             this.yesRadio.Enabled = false;
-            this.yesRadio.Location = new System.Drawing.Point(110, 313);
+            this.yesRadio.Location = new System.Drawing.Point(128, 361);
             this.yesRadio.Name = "yesRadio";
-            this.yesRadio.Size = new System.Drawing.Size(43, 17);
+            this.yesRadio.Size = new System.Drawing.Size(42, 19);
             this.yesRadio.TabIndex = 67;
             this.yesRadio.TabStop = true;
             this.yesRadio.Text = "Yes";
@@ -146,119 +145,120 @@
             // countryTextbox
             // 
             this.countryTextbox.Enabled = false;
-            this.countryTextbox.Location = new System.Drawing.Point(110, 278);
+            this.countryTextbox.Location = new System.Drawing.Point(128, 321);
             this.countryTextbox.Name = "countryTextbox";
-            this.countryTextbox.Size = new System.Drawing.Size(143, 20);
+            this.countryTextbox.Size = new System.Drawing.Size(166, 23);
             this.countryTextbox.TabIndex = 66;
             // 
             // zipTextbox
             // 
             this.zipTextbox.Enabled = false;
-            this.zipTextbox.Location = new System.Drawing.Point(110, 246);
+            this.zipTextbox.Location = new System.Drawing.Point(128, 284);
             this.zipTextbox.Name = "zipTextbox";
-            this.zipTextbox.Size = new System.Drawing.Size(143, 20);
+            this.zipTextbox.Size = new System.Drawing.Size(166, 23);
             this.zipTextbox.TabIndex = 65;
             // 
             // cityTextbox
             // 
             this.cityTextbox.Enabled = false;
-            this.cityTextbox.Location = new System.Drawing.Point(110, 211);
+            this.cityTextbox.Location = new System.Drawing.Point(128, 243);
             this.cityTextbox.Name = "cityTextbox";
-            this.cityTextbox.Size = new System.Drawing.Size(143, 20);
+            this.cityTextbox.Size = new System.Drawing.Size(166, 23);
             this.cityTextbox.TabIndex = 64;
             // 
             // addressTextbox
             // 
             this.addressTextbox.Enabled = false;
-            this.addressTextbox.Location = new System.Drawing.Point(110, 176);
+            this.addressTextbox.Location = new System.Drawing.Point(128, 203);
             this.addressTextbox.Name = "addressTextbox";
-            this.addressTextbox.Size = new System.Drawing.Size(143, 20);
+            this.addressTextbox.Size = new System.Drawing.Size(166, 23);
             this.addressTextbox.TabIndex = 63;
             // 
             // phoneTextbox
             // 
             this.phoneTextbox.Enabled = false;
-            this.phoneTextbox.Location = new System.Drawing.Point(110, 139);
+            this.phoneTextbox.Location = new System.Drawing.Point(128, 160);
             this.phoneTextbox.Name = "phoneTextbox";
-            this.phoneTextbox.Size = new System.Drawing.Size(143, 20);
+            this.phoneTextbox.Size = new System.Drawing.Size(166, 23);
             this.phoneTextbox.TabIndex = 62;
             // 
             // nameTextbox
             // 
             this.nameTextbox.Enabled = false;
-            this.nameTextbox.Location = new System.Drawing.Point(110, 100);
+            this.nameTextbox.Location = new System.Drawing.Point(128, 115);
             this.nameTextbox.Name = "nameTextbox";
-            this.nameTextbox.Size = new System.Drawing.Size(143, 20);
+            this.nameTextbox.Size = new System.Drawing.Size(166, 23);
             this.nameTextbox.TabIndex = 61;
             // 
             // zipLabel
             // 
             this.zipLabel.AutoSize = true;
-            this.zipLabel.Location = new System.Drawing.Point(12, 246);
+            this.zipLabel.Location = new System.Drawing.Point(14, 284);
             this.zipLabel.Name = "zipLabel";
-            this.zipLabel.Size = new System.Drawing.Size(53, 13);
+            this.zipLabel.Size = new System.Drawing.Size(58, 15);
             this.zipLabel.TabIndex = 60;
             this.zipLabel.Text = "Zip Code:";
             // 
             // activeLabel
             // 
             this.activeLabel.AutoSize = true;
-            this.activeLabel.Location = new System.Drawing.Point(12, 313);
+            this.activeLabel.Location = new System.Drawing.Point(14, 361);
             this.activeLabel.Name = "activeLabel";
-            this.activeLabel.Size = new System.Drawing.Size(40, 13);
+            this.activeLabel.Size = new System.Drawing.Size(43, 15);
             this.activeLabel.TabIndex = 59;
             this.activeLabel.Text = "Active:";
             // 
             // countryLabel
             // 
             this.countryLabel.AutoSize = true;
-            this.countryLabel.Location = new System.Drawing.Point(12, 278);
+            this.countryLabel.Location = new System.Drawing.Point(14, 321);
             this.countryLabel.Name = "countryLabel";
-            this.countryLabel.Size = new System.Drawing.Size(46, 13);
+            this.countryLabel.Size = new System.Drawing.Size(53, 15);
             this.countryLabel.TabIndex = 58;
             this.countryLabel.Text = "Country:";
             // 
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(12, 211);
+            this.cityLabel.Location = new System.Drawing.Point(14, 243);
             this.cityLabel.Name = "cityLabel";
-            this.cityLabel.Size = new System.Drawing.Size(27, 13);
+            this.cityLabel.Size = new System.Drawing.Size(31, 15);
             this.cityLabel.TabIndex = 57;
             this.cityLabel.Text = "City:";
             // 
             // addressLabel
             // 
             this.addressLabel.AutoSize = true;
-            this.addressLabel.Location = new System.Drawing.Point(13, 176);
+            this.addressLabel.Location = new System.Drawing.Point(15, 203);
             this.addressLabel.Name = "addressLabel";
-            this.addressLabel.Size = new System.Drawing.Size(48, 13);
+            this.addressLabel.Size = new System.Drawing.Size(52, 15);
             this.addressLabel.TabIndex = 56;
             this.addressLabel.Text = "Address:";
             // 
             // phoneLabel
             // 
             this.phoneLabel.AutoSize = true;
-            this.phoneLabel.Location = new System.Drawing.Point(13, 139);
+            this.phoneLabel.Location = new System.Drawing.Point(15, 160);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(41, 13);
+            this.phoneLabel.Size = new System.Drawing.Size(44, 15);
             this.phoneLabel.TabIndex = 55;
             this.phoneLabel.Text = "Phone:";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(12, 100);
+            this.nameLabel.Location = new System.Drawing.Point(14, 115);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(38, 13);
+            this.nameLabel.Size = new System.Drawing.Size(42, 15);
             this.nameLabel.TabIndex = 54;
             this.nameLabel.Text = "Name:";
             // 
             // idLabel
             // 
             this.idLabel.AutoSize = true;
-            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel.Location = new System.Drawing.Point(12, 43);
+            this.idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.idLabel.Location = new System.Drawing.Point(14, 50);
             this.idLabel.Name = "idLabel";
             this.idLabel.Size = new System.Drawing.Size(103, 13);
             this.idLabel.TabIndex = 74;
@@ -267,16 +267,16 @@
             // custComboBox
             // 
             this.custComboBox.FormattingEnabled = true;
-            this.custComboBox.Location = new System.Drawing.Point(121, 40);
+            this.custComboBox.Location = new System.Drawing.Point(141, 46);
             this.custComboBox.Name = "custComboBox";
-            this.custComboBox.Size = new System.Drawing.Size(144, 21);
+            this.custComboBox.Size = new System.Drawing.Size(167, 23);
             this.custComboBox.TabIndex = 76;
             // 
             // DeleteCustomer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 449);
+            this.ClientSize = new System.Drawing.Size(351, 518);
             this.Controls.Add(this.custComboBox);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.clearButton);
@@ -299,13 +299,11 @@
             this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.phoneLabel);
             this.Controls.Add(this.nameLabel);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DeleteCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delete Customer";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

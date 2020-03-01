@@ -19,7 +19,7 @@ namespace Appointment_Tracker
         public Dashboard()
         {
             InitializeComponent();
-            this.FormClosing += Dashboard_FormClosing;
+            this.FormClosing += DashboardFormClose;
             this.Activated += new System.EventHandler(this.Dashboard_Activated);
         }
         
@@ -31,7 +31,7 @@ namespace Appointment_Tracker
         public void Dashboard_Load(bool week)
         {
         
-            DateTime filter = week ? calcDateFilter("week") : calcDateFilter("month");
+            DateTime filter = week ? dateFilter("week") : dateFilter("month");
             DataTable dtRecord = DBHelper.dashboard(DBHelper.dateSQLFormat(filter), week);
             dataGridView.DataSource = dtRecord;
         }
@@ -52,7 +52,7 @@ namespace Appointment_Tracker
             this.Hide();
         }
 
-        private void deleteCusButton_Click(object sender, EventArgs e)
+        private void deleteCustomerButton_Click(object sender, EventArgs e)
         {
             Form deleteCust = new DeleteCustomer();
             deleteCust.Owner = this;
@@ -60,7 +60,7 @@ namespace Appointment_Tracker
             this.Hide();
         }
 
-        private void numApptButton_Click(object sender, EventArgs e)
+        private void newAppointmentButton_Click(object sender, EventArgs e)
         {
             Form appoint = new Appointment();
             appoint.Owner = this;
@@ -68,7 +68,7 @@ namespace Appointment_Tracker
             this.Hide();
         }
 
-        private void schedButton_Click(object sender, EventArgs e)
+        private void scheduleButton_Click(object sender, EventArgs e)
         {
             Form schedule = new Schedule();
             schedule.Owner = this;
@@ -77,7 +77,7 @@ namespace Appointment_Tracker
 
         }
 
-        private void cusReportButton_Click(object sender, EventArgs e)
+        private void reportButton_Click(object sender, EventArgs e)
         {
             Form timeCard = new Logins();
             timeCard.Owner = this;
@@ -110,12 +110,12 @@ namespace Appointment_Tracker
             return tbl;
         }
 
-        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        private void DashboardFormClose(object sender, FormClosingEventArgs e)
         {
             Logger.signOut(DBHelper.getCurrentUserName());
         }
 
-        private void AddApptButton_Click(object sender, EventArgs e)
+        private void AddAppointmentButton_Click(object sender, EventArgs e)
         {
             Form addPoint = new AddAppointment();
             addPoint.Owner = this;
@@ -124,7 +124,7 @@ namespace Appointment_Tracker
         }
 
 
-        private void UpdateApptButton_Click(object sender, EventArgs e)
+        private void UpdateAppointmentButton_Click(object sender, EventArgs e)
         {
             Form updateAppoint = new UpdateAppoint();
             updateAppoint.Owner = this;
@@ -132,7 +132,7 @@ namespace Appointment_Tracker
             this.Hide();
         }
 
-        private void DeleteApptButton_Click(object sender, EventArgs e)
+        private void DeleteAppointmentButton_Click(object sender, EventArgs e)
         {
             Form deleteAppint = new DeleteAppoint();
             deleteAppint.Owner = this;
@@ -141,24 +141,27 @@ namespace Appointment_Tracker
 
         }
 
-        private void WeekViewRadio_CheckedChanged(object sender, EventArgs e)
+        private void WeekViewRadioCheck(object sender, EventArgs e)
         {
             Dashboard_Load(weekViewRadio.Checked);
         }
 
 
-        public DateTime calcDateFilter(string type)
+        public DateTime dateFilter(string type)
         {
             if (type == "week")
             {
                 DateTime week = DateTime.Now.AddDays(7);
                 return week;
             }
-            else
-            {
-                DateTime month = DateTime.Now.AddMonths(1);
-                return month;
-            }
+
+            DateTime month = DateTime.Now.AddMonths(1);
+            return month;
+        }
+
+        private void dashLabel_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
