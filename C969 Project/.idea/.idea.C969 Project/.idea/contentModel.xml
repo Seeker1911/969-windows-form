@@ -33,6 +33,7 @@
       <e p="Login.cs" t="Include" />
       <e p="Login.Designer.cs" t="Include" />
       <e p="Login.resx" t="Include" />
+      <e p="Logins.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="packages.config" t="Include" />
@@ -47,7 +48,6 @@
       <e p="Schedule.cs" t="Include" />
       <e p="Schedule.Designer.cs" t="Include" />
       <e p="Schedule.resx" t="Include" />
-      <e p="Timecard.cs" t="Include" />
       <e p="Timecard.Designer.cs" t="Include" />
       <e p="Timecard.resx" t="Include" />
       <e p="UpdateAppoint.cs" t="Include" />

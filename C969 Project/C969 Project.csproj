@@ -140,11 +140,11 @@
     <Compile Include="Schedule.Designer.cs">
       <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Timecard.cs">
+    <Compile Include="Logins.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Timecard.Designer.cs">
-      <DependentUpon>Timecard.cs</DependentUpon>
+      <DependentUpon>Logins.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateAppoint.cs">
       <SubType>Form</SubType>
@@ -192,7 +192,7 @@
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Timecard.resx">
-      <DependentUpon>Timecard.cs</DependentUpon>
+      <DependentUpon>Logins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateAppoint.resx">
       <DependentUpon>UpdateAppoint.cs</DependentUpon>

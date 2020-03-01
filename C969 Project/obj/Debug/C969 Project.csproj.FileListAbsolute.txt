@@ -39,7 +39,6 @@ C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointm
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.DeleteCustomer.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Login.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Schedule.resources
-C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Timecard.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.UpdateAppoint.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.UpdateCustomer.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.AddAppointment.resources
@@ -49,3 +48,4 @@ C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\bin\Debug\Appointm
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Properties.Resources.resources
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker Project.exe
 C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker Project.pdb
+C:\Users\michael mead\RiderProjects\C969-Project\C969 Project\obj\Debug\Appointment_Tracker.Logins.resources

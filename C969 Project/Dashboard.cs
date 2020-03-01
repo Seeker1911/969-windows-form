@@ -79,7 +79,7 @@ namespace Appointment_Tracker
 
         private void cusReportButton_Click(object sender, EventArgs e)
         {
-            Form timeCard = new Timecard();
+            Form timeCard = new Logins();
             timeCard.Owner = this;
             timeCard.Show();
             this.Hide();
