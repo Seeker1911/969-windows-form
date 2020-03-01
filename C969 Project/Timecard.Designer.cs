@@ -75,7 +75,7 @@
             this.scheduleLabel.ForeColor = System.Drawing.Color.RoyalBlue;
             this.scheduleLabel.Location = new System.Drawing.Point(203, 10);
             this.scheduleLabel.Name = "scheduleLabel";
-            this.scheduleLabel.Size = new System.Drawing.Size(247, 29);
+            this.scheduleLabel.Size = new System.Drawing.Size(214, 29);
             this.scheduleLabel.TabIndex = 53;
             this.scheduleLabel.Text = "Print User Logins";
             this.scheduleLabel.Click += new System.EventHandler(this.scheduleLabel_Click);
