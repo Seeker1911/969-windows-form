@@ -59,7 +59,7 @@ namespace Appointment_Tracker
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            enabling(false);
+            Enabling(false);
             //Lambda used for function to clear fields
             Action<Control.ControlCollection> clearForm = null;
 
@@ -83,22 +83,16 @@ namespace Appointment_Tracker
            
             DataRowView drv = custComboBox.SelectedItem as DataRowView;
             int id = Convert.ToInt32(custComboBox.SelectedValue);
-            var custList = DBHelper.searchCustomer(id);
-            setCustomerList(custList);
-            //Calls db helper to get all customer results as object array
-            //If we got a null array, don't continue
-            if (custList != null)
+            var customerList = DBHelper.searchCustomer(id);
+            setCustomerList(customerList);
+            if (customerList != null)
             {
-                //Enable fields
-                enabling(true);
-                //Input data into text fields
-                fillFields(custList);
+                Enabling(true);
+                FillFields(customerList);
             }
-            
         }
 
-
-        private void enabling(bool status)
+        private void Enabling(bool status)
         {
             nameTextbox.Enabled = status;
             phoneTextbox.Enabled = status;
@@ -111,7 +105,7 @@ namespace Appointment_Tracker
             updateButton.Enabled = status;
         }
 
-        private void fillFields(List<KeyValuePair<string, object>> custList)
+        private void FillFields(List<KeyValuePair<string, object>> custList)
         {
             // Lambda used to set text values from kvp
             nameTextbox.Text = custList.First(kvp => kvp.Key == "customerName").Value.ToString();
@@ -132,15 +126,14 @@ namespace Appointment_Tracker
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            DialogResult youSure = MessageBox.Show("Are you sure you want to update this customer?", "", MessageBoxButtons.YesNo);
-            if (youSure == DialogResult.Yes)
+            DialogResult areYouSure = MessageBox.Show(@"Are you sure you want to update this customer?", "", MessageBoxButtons.YesNo);
+            if (areYouSure == DialogResult.Yes)
             {
                 try
                 {
-                    //Grab List & convert
+                    //Convert the list to dictionary
                     var list = getCustomerList();
                     IDictionary<string, object> dictionary = list.ToDictionary(pair => pair.Key, pair => pair.Value);
-                    //replace values for the keys in the form         
                     dictionary["customerName"] = nameTextbox.Text;
                     dictionary["phone"] = phoneTextbox.Text;
                     dictionary["address"] = addressTextbox.Text;
@@ -149,9 +142,7 @@ namespace Appointment_Tracker
                     dictionary["country"] = countryTextbox.Text;
                     dictionary["active"] = yesRadio.Checked ? 1 : 0;
 
-                    //Pass the updated IDictionary to dbhelper to update the database
                     DBHelper.updateCustomer(dictionary);
-
                 }
                 catch (Exception ex)
                 {
@@ -160,7 +151,7 @@ namespace Appointment_Tracker
                 finally
                 {
                     clearButton_Click(null, new EventArgs());
-                    MessageBox.Show("Customer Record Updated");
+                    MessageBox.Show(@"Customer Record Updated");
 
                     this.Owner.Show();
                     this.Close();
