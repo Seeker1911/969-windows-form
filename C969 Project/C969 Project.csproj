@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5C14E467-6EAE-47B4-AB79-77BED942F64D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>C969_Project</RootNamespace>
-    <AssemblyName>C969 Project</AssemblyName>
+    <RootNamespace>Appointment_Tracker</RootNamespace>
+    <AssemblyName>Appointment_Tracker Project</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
