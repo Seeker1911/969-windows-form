@@ -55,3 +55,5 @@ Login time = 3/1/2020 9:40:57 AM, userName = test
 Logout time = 3/1/2020 9:41:18 AM, userName = test
 Login time = 3/1/2020 10:29:04 AM, userName = test
 Logout time = 3/1/2020 10:30:01 AM, userName = test
+Login time = 6/27/2020 1:30:21 PM, userName = test
+Logout time = 6/27/2020 1:30:37 PM, userName = test

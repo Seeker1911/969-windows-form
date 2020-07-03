@@ -367,7 +367,7 @@
             // 
             this.typeComboBox.FormattingEnabled = true;
             this.typeComboBox.Items.AddRange(new object[]
-                {"Event", "Follow Up", "Initial Consulatation", "Lab Visit", "Other", "Physical", "Surgery"});
+                {"Event", "Follow Up", "Initial Consulatation", "Private Class", "Other", "General Class", "Competition"});
             this.typeComboBox.Location = new System.Drawing.Point(365, 80);
             this.typeComboBox.Name = "typeComboBox";
             this.typeComboBox.Size = new System.Drawing.Size(199, 23);

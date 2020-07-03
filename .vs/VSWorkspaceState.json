@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\C969 Project",
+    "\\C969 Project\\bin",
+    "\\C969 Project\\bin\\Release"
   ],
+  "SelectedNode": "\\C969 Project\\C969 Project.sln",
   "PreviewInSolutionExplorer": false
 }

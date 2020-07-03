@@ -87,7 +87,7 @@ namespace Appointment_Tracker
             DateTime localStart = start.ToLocalTime();
             DateTime localEnd = end.ToLocalTime();
             DateTime businessStart = DateTime.Today.AddHours(8);
-            DateTime businessEnd = DateTime.Today.AddHours(17);
+            DateTime businessEnd = DateTime.Today.AddHours(19);
 
             //outside allowed hours
             if (localStart.TimeOfDay < businessStart.TimeOfDay || localEnd.TimeOfDay > businessEnd.TimeOfDay)
@@ -132,7 +132,7 @@ namespace Appointment_Tracker
                 showError(contactLabel.Text);
                 return false;
             }
-            if (System.Text.RegularExpressions.Regex.IsMatch(descriptionTextbox.Text, "[^a-zA-Z]+$"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(descriptionTextbox.Text, "[^a-zA-Z][.!]+$"))
             {
                 showError(descriptionLabel.Text);
                 return false;
